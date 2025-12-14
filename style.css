@@ -261,6 +261,14 @@ html {
     font-weight: bold;
 }
 
+.item-desc {
+    font-style: italic;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 0.95rem;
+    color:#795548;
+    line-height: 1.5;
+}
+
 .menu-item p{
     color: #795548;
     font-size: 0.95rem;
