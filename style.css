@@ -209,11 +209,10 @@ body {
 }
 
 .menu-item:hover{
-    background-color: #fff8f0;
-    padding: 15px;
-    margin: -15px;
+    background-color: #faf5ef;
+    padding: 15px 0;
     border-radius: 8px;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 .item-header {
