@@ -303,31 +303,38 @@ html {
 .about-container {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
+    width: 100%;
 }
 
 .about-content {
     width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .about-content h2 {
     font-size: 3.5rem;
     color: #5d4037;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-family: 'Poppins', sans-serif;
-    text-align: left;
+    text-align: center;
 }
 
 .about-subtitle {
     font-size: 2rem;
     color: #775a50;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     font-family: 'Dancing Script', cursive;
     font-weight: 700;
-    text-align: left;
+    text-align: center;
+    display: block;
+}
+
+.about-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
 }
 
 .about-text p {
@@ -344,15 +351,18 @@ html {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .highlight-item {
     background: white;
-    padding: 25px 20px;
+    padding: 30px 25px;
     border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.05);
     text-align: center;
-    transition: all 0.3 ease;
+    transition: all 0.3s ease;
     border: 1px solid #e8d6c9;
     position: relative;
     overflow: hidden;
@@ -378,7 +388,7 @@ html {
     color: #5d4037;
     margin-bottom: 12px;
     font-family: 'Poppins', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 600;
 }
 
@@ -387,6 +397,21 @@ html {
     font-size: 1rem;
     line-height: 1.5;
     margin: 0;
+}
+
+@media (max-width: 768px){
+    .about-highlights {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .about-contnet h2 {
+        font-size: 2.8rem;
+    }
+
+    .about-subtitle {
+        font-size: 1.7rem;
+    }
 }
 
 
