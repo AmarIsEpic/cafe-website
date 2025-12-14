@@ -129,6 +129,15 @@ html {
     text-decoration: none;
 }
 
+.logo-text{
+    font-family: 'Libre Baskerville', serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
 /*Hero content*/
 .hero-content {
     color: white;
