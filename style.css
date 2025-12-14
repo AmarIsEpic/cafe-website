@@ -47,8 +47,11 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 25px;
-    background-color: rgba(0, 0, 0, 0.1);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /*Shadow*/
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15); /*Shadow*/
+    position: sticky; /*Navbar follows with scroll*/
+    top: 0;
+    z-index: 1000; /*Navbar is always the top element*/
     flex-wrap: wrap; 
 }
 
@@ -62,9 +65,9 @@ body {
 .navlink {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px;
     align-items: center;
-    font-size: larger;
+    font-size: 1.3rem;
     flex-wrap: wrap; 
 }
 /*Default style for all navigation links */
@@ -117,18 +120,23 @@ body {
 .hero-content {
     color: white;
     text-align: center;
-    padding: 100px 20px;
+    padding: 120px 20px;
     max-width: 800px;
     margin: 0 auto;
 }
 
 .hero-content h1{
-    font-size: xx-large;
+    font-size: 4rem;
     margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
 
 .hero-content p{
-    font-size: large;
+    font-size: 2rem;
+    font-family: 'Brush Script MT', cursive, sans-serif; /*cursive font*/
+    font-style: italic;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
 
 /*Website without background 1*/
