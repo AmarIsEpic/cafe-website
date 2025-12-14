@@ -9,6 +9,9 @@
 body {
     font-family: Arial, sans-serif;
     background-color: white;
+    margin: 0;
+    padding: 0;
+    padding-top: 80px;
 }
 /*Hero section with background*/
 
@@ -20,6 +23,8 @@ html {
     background-size: cover;
     min-height: 100vh;
     position: relative;
+    margin-top: -80px;
+    padding-top: 80px;
 }
 
 /*Overlay on hero section*/
@@ -46,14 +51,13 @@ html {
 }
 /*Navigation bar*/
 .navbar {
-    position: sticky;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 25px;
     background-color: rgba(10, 10, 10, 0.15);
     box-shadow: 0 4px 12px rgba(0,0,0,0.2); /*Shadow*/
-    position: sticky; /*Navbar follows with scroll*/
+    position: fixed; /*Navbar follows with scroll*/
     top: 0;
     z-index: 1000; /*Navbar is always the top element*/
     flex-wrap: wrap; 
@@ -126,7 +130,7 @@ html {
 .hero-content {
     color: white;
     text-align: center;
-    padding: 200px 20px 100px;
+    padding: 150px 20px 100px;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -155,7 +159,7 @@ html {
     padding: 100px 20px;
     background: url('coffeebg2.png') no-repeat center center;
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: scroll;
     min-height: 100vh;
     position: relative;
 }
@@ -167,7 +171,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(226, 203, 178, 0.85);
+    background-color: rgba(226, 203, 178, 0.75);
     z-index: 0;
 }
 
@@ -176,7 +180,7 @@ html {
     margin: 0 auto;
     padding: 0 40px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .section-title {
