@@ -19,7 +19,7 @@ body {
 
 .logo{
     color: white;
-    font-size:large;
+    font-size: larger;
 
 }
 
@@ -27,6 +27,20 @@ body {
     list-style: none;
     display: flex;
     gap: 8%;
+    position: relative;
+    color: white;
+    align-items: center;
+}
+
+.navlink::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0px;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
 }
 
 .navlink a {
@@ -34,6 +48,6 @@ body {
     text-decoration: none;
 }
 
-.navlink a:hover{
-    text-decoration:underline;
+.navlink:hover::after {
+    width: 100%;
 }
