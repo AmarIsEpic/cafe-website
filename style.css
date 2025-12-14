@@ -201,7 +201,7 @@ html {
 
 .section-subtitle{
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: #775a50;
     margin-bottom: 60px;
     font-family: 'Dancing Script', cursive;
@@ -318,7 +318,7 @@ html {
 }
 
 .about-subtitle {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: #775a50;
     margin-bottom: 40px;
     font-family: 'Dancing Script', cursive;
@@ -334,7 +334,7 @@ html {
 }
 
 .about-text p {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     line-height: 1.8;
     color:#6d4c41;
     margin-bottom: 20px;
@@ -353,13 +353,13 @@ html {
 }
 
 .highlight-item {
-    background: white;
+    background: rgb(223, 198, 172);
     padding: 30px 25px;
     border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    box-shadow: 3px 8px 25px rgba(0,0,0,0.05);
     text-align: center;
     transition: all 0.3s ease;
-    border: 1px solid #e8d6c9;
+    border: none;
     position: relative;
     overflow: hidden;
 }
@@ -371,7 +371,7 @@ html {
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, #a1887f, #8d6e63);
+    background: rgb(211, 188, 164);
 }
 
 .highlight-item:hover{
@@ -390,7 +390,7 @@ html {
 
 .highlight-item p {
     color: #8d6e63;
-    font-size: 1rem;
+    font-size: 1.3rem;
     line-height: 1.5;
     margin: 0;
 }
