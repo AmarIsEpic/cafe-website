@@ -30,6 +30,17 @@ body {
     background-color: rgba(0,0,0, 0.3);
     z-index: 0;
 }
+
+/*Hero elements overlay*/
+.hero-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+/*Background link class*/
+.background-link{
+    display:none;
+}
 /*Navigation bar*/
 .navbar {
     display: flex;
@@ -99,4 +110,18 @@ body {
 .logo-link{
     display: inline-block;
     text-decoration: none;
+}
+
+/*Hero content*/
+.hero-content {
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1{
+    font-size: xx-large;
+    margin-bottom: 20px,
 }
