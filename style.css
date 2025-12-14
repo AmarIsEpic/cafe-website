@@ -59,6 +59,9 @@ html {
     box-shadow: 0 4px 12px rgba(0,0,0,0.2); /*Shadow*/
     position: fixed; /*Navbar follows with scroll*/
     top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     z-index: 1000; /*Navbar is always the top element*/
     flex-wrap: wrap; 
 }
@@ -156,7 +159,7 @@ html {
 
 /*Menu section*/
 .menu-section{
-    padding: 100px 20px;
+    padding: 50px 20px 100px;
     background: url('coffeebg2.png') no-repeat center center;
     background-size: cover;
     background-attachment: scroll;
