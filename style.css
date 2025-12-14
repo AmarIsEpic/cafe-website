@@ -316,3 +316,35 @@ html {
     font-family: 'Poppins', sans-serif;
 }
 
+.about-subtitle {
+    font-size: 2rem;
+    color: #775a50;
+    margin-bottom: 30px;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color:#6d4c41;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+.about-highlights {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.highlight-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
