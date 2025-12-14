@@ -177,16 +177,17 @@ body {
 
 .menu-categories {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmaxd(300px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
     margin-top: 40px;
 }
 
 .category {
     background: white;
-    padding: 30px;
+    padding: 25px;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    height: 100%;
 }
 
 .category h3 {
