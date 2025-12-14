@@ -64,3 +64,19 @@ body {
     transform: translateX(-50%);/*makes the underline start from the center*/
     opacity: 0.35;
 }
+
+/*Logo*/
+.logo-img{
+    height:50px;
+    width:auto;
+    transition: transform 0.3s ease; /*hover animation*/
+}
+
+.logo-img:hover{
+    transform: scale(1.05);
+}
+
+.logo-link{
+    display: inline-block;
+    text-decoration: none;
+}
