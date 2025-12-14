@@ -8,8 +8,28 @@
 /*Body*/
 body {
     font-family: Arial, sans-serif;
+    background-color: white;
+}
+/*Hero section with background*/
+
+.hero-section {
+    background: url(backgroundfix.png) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100%;
+    position: relative;
 }
 
+/*Overlay on hero section*/
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0, 0.3);
+    z-index: 0;
+}
 /*Navigation bar*/
 .navbar {
     display: flex;
