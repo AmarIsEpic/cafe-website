@@ -114,11 +114,6 @@ html {
 }
 
 /*Logo*/
-.logo-img{
-    height:50px;
-    width:auto;
-    transition: transform 0.3s ease; /*hover animation*/
-}
 
 .logo-img:hover{
     transform: none;
@@ -136,6 +131,7 @@ html {
     color: white;
     letter-spacing: 5px;
     text-transform: uppercase;
+    padding-left: 7px;
 }
 
 /*Hero content*/
@@ -197,7 +193,7 @@ html {
 
 .section-title {
     text-align: center;
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     color: #5d4037;
     margin-bottom: 15px;
     font-family: 'Poppins', sans-serif;
@@ -314,7 +310,7 @@ html {
 }
 
 .about-content h2 {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     color: #5d4037;
     margin-bottom: 15px;
     font-family: 'Poppins', sans-serif;
