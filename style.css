@@ -36,6 +36,13 @@ body {
     flex-wrap: wrap; 
 }
 
+.navlink a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    padding-bottom: 4px;
+}
+
 /*Navigation bar hover animation (underline)*/
 .navlink a::after {
     content: "";
@@ -45,19 +52,15 @@ body {
     width: 0px;
     height: 2px;
     background-color: white;
-    transition: width 0.4s opacity 0.8s ease 1.5s;
+    transition: width 0.4s ease 0s, opacity 2s ease 0s;
     transform: translateX(-50%);
+    opacity: 1;
 }
 
-.navlink a {
-    position: relative;
-    color: white;
-    text-decoration: none;
-    padding-bottom: 4px;
-}
-
+/*Navigation bar hover animation (underline)  #2 */
 .navlink a:hover::after {
     width: 100%;
     left: 50%;
     transform: translateX(-50%);
+    opacity: 0.35;
 }
