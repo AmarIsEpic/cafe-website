@@ -110,7 +110,7 @@ body {
 }
 
 .logo-img:hover{
-    transform: scale(1.05);
+    transform: none;
 }
 
 .logo-link{
@@ -149,7 +149,7 @@ body {
 /*Menu section*/
 .menu-section{
     padding: 100px 20px;
-    background: url('coffeebg.png') no-repeat center center;
+    background: url('coffeebg2.png') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
     min-height: 100vh;
@@ -213,7 +213,7 @@ body {
     font-size: 1.5rem;
     color:#5d4037;
     margin-bottom: 20px;
-    padding-bottom: 10px;
+    padding-bottom: git10px;
     border-bottom: 2px solid #d7ccc8;
 }
 
@@ -231,7 +231,7 @@ body {
 
 .menu-item:hover{
     background-color: transparent;
-    padding: 10px 0;
+    padding: 15px 0;
     margin: 0;
     border-radius: 0;
     transition: none;
