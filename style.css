@@ -180,5 +180,37 @@ body {
     text-align: center;
     font-size: 3.5rem;
     color: #5d4037;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.section-subtitle{
+    text-align: center;
+    font-size: 1.3rem;
+    color: #8d6e63;
+    margin-bottom: 60px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.menu-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmaxd(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.category {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.category h3 {
+    font-size: 2rem;
+    color:#5d4037;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #d7ccc8;
 }
 
