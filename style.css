@@ -13,16 +13,27 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: rgba(50, 50, 50, 0.3);
+    padding: 25px;
+    background-color: rgba(50, 50, 50, 0.6);
 }
 
 .logo{
     color: white;
-    font-size:medium;
+    font-size:large;
+
 }
 
 .navlink {
     list-style: none;
     display: flex;
+    gap: 8%;
+}
+
+.navlink a {
+    color: white;
+    text-decoration: none;
+}
+
+.navlink a:hover{
+    text-decoration:underline;
 }
