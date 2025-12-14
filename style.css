@@ -35,7 +35,7 @@ body {
     font-size: larger;
     flex-wrap: wrap; 
 }
-
+/*Default style for all navigation links */
 .navlink a {
     position: relative;
     color: white;
@@ -52,8 +52,8 @@ body {
     width: 0px;
     height: 2px;
     background-color: white;
-    transition: width 0.4s ease 0s, opacity 2s ease 0s;
-    transform: translateX(-50%);
+    transition: width 0.4s ease 0s, opacity 2s ease 0s;/*animation for the line width and opacity*/
+    transform: translateX(-50%); /*makes the underline start from the center*/
     opacity: 1;
 }
 
@@ -61,6 +61,6 @@ body {
 .navlink a:hover::after {
     width: 100%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%);/*makes the underline start from the center*/
     opacity: 0.35;
 }
