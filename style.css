@@ -290,5 +290,29 @@ html {
     font-weight: bold;
 }
 
+/*About section*/
+.about-section {
+    padding: 100px 20px;
+    background-color: rgba(226, 203, 178, 0.75);
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
 
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-contnet h2 {
+    font-size: 3.5rem;
+    color: #5d4037;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+}
 
