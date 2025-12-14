@@ -354,11 +354,39 @@ html {
     text-align: center;
     transition: all 0.3 ease;
     border: 1px solid #e8d6c9;
+    position: relative;
+    overflow: hidden;
+}
+
+.highlight-item::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #a1887f, #8d6e63);
+}
+
+.highlight-item:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    border-color: #d7ccc8;
+}
+
+.highlight-item h4 {
+    color: #5d4037;
+    margin-bottom: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
 }
 
 .highlight-item p {
     color: #8d6e63;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
 }
 
 
