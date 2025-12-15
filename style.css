@@ -519,21 +519,31 @@ html {
 
 /* Gallery Section */
 .gallery-section {
-    padding: 80px 20px;
+    padding: 80px 0;
     background-color: #967969;
     position: relative;
     overflow: hidden;
+    width: 100%
+}
+
+.gallery-section .container{
+    max-width: 100%;
+    padding: 0 10%;
+    position: relative;
+    z-index: 2;
 }
 
 .gallery-section .section-title{
     color: white;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-align: center;
 }
 
 .gallery-section .section-subtitle {
     color: #f0e6dc;
     font-size: 2rem;
     margin-bottom: 40px;
+    text-align: center;
 }
 
 .gallery-scroll-container {
@@ -543,6 +553,8 @@ html {
     overflow-y: hidden;
     padding: 20px 0 40px;
     cursor: grab;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.3) rgba(255,255,255,0,1);
 }
 
 .gallery-scroll-container:active{
@@ -571,9 +583,77 @@ html {
 /* Gallery track */
 .gallery-track {
     display: flex;
-    gap: 30px;
-    padding: 20px 40px;
+    gap: 20px;
+    padding: 10px 0;
     width: max-content;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    flex: 0 0 auto;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    transition: all 0.4s ease;
+    border-radius: 12px;
+    background-color: white;
+    cursor: pointer;
+    width: calc(33.33% - 14px);
+    min-width: 300px;
+    max-width: 400px;
+    height: 350px;
+}
+
+.gallery-item.wide {
+    width: calc(50% -10px);
+    max-width: 500px;
+    height: 300px;
+}
+
+.gallery-item.tall {
+    width: calc(25% - 15px); 
+    max-width: 280px;
+    height: 420px;
+}
+
+.gallery-item.square {
+    width: calc(33.33%- 14px);
+    height: 350px;
+    max-width: 350px;
+}
+
+.gallery-item:hover{
+    transform: translateY(-10px) scale (1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0, 0.35);
+    z-index: 10;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale (1.1);
+}
+
+.gallery-item::after{
+    content: "";
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(150, 121, 105, 0);
+    transition: background 0.3s ease;
+    z-index: 1;
+}
+
+.gallery-item:hover::after{
+    background: rgba(150, 121, 105, 0.1);
 }
 
 .gallery-rectangle .gallery-square {
