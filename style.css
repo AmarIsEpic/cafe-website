@@ -547,7 +547,7 @@ html {
     font-size: 2.2rem;
     margin-bottom: 40px;
     text-align: center;
-    font-family: 'Dancing Scirpt', cursive;
+    font-family: 'Dancing Script', cursive;
     font-weight: 700;
 }
 
@@ -559,15 +559,16 @@ html {
     padding: 30px 0 50px;
     cursor: grab;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
 }
 
 .gallery-scroll-container:active{
     cursor: grabbing;
 }
 
-/* Hide scrollbar */
+/* Custom scrollbar */
 .gallery-scroll-container::-webkit-scrollbar{
-    height: 10px;
+    height: 8px;
 }
 
 .gallery-scroll-container::-webkit-scrollbar-track {
@@ -587,10 +588,11 @@ html {
 /* Gallery track */
 .gallery-track {
     display: flex;
-    gap: 30px;
+    gap: 25px;
     padding: 10px 0;
     width: max-content;
     margin: 0 auto;
+    align-items: center;
 }
 
 .gallery-item {
@@ -601,39 +603,39 @@ html {
     box-shadow: 0 10px 25px rgba(0,0,0,0.25);
     background-color: white;
     cursor: pointer;
-    width: 300px;
-    height: 400px;
+    translate: all 0.4s ease;
+    width: 180px;
+    height: 240px;
 }
 
 .gallery-item.size-large {
-    width: 400px;
-    height: 500px;
-}
-
-.gallery-item.size-medium {
-    width: 280px;
-    height: 350px;
-}
-
-.gallery-item.size-small {
     width: 220px;
     height: 280px;
 }
 
+.gallery-item.size-medium {
+    width: 190px;
+    height: 250px;
+}
+
+.gallery-item.size-small {
+    width: 150px;
+    height: 200px;
+}
+
 .gallery-item.size-wide {
-    width: 450px;
-    height: 300px;
+    width: 250px;
+    height: 180px;
 }
 
 .gallery-item.size-tall {
-    width: 250px;
-    height: 450px;
+    width: 160px;
+    height: 280px;
 }
 
 .gallery-item:hover{
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-    transition: all 0.4s ease;
     z-index: 10;
 }
 
@@ -651,7 +653,7 @@ html {
 
 .gallery-item::after{
     content: "";
-    position:absolute;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
