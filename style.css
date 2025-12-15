@@ -640,3 +640,41 @@ html {
     width: 380px;
     height: 220px;
 }
+
+/* Sizes for square */
+.square-medium{
+    width: 280px;
+    height: 280px;
+}
+
+.square-small {
+    width: 200px;
+    height: 200px;
+}
+
+.square-large {
+    width: 350px;
+    height: 350px;
+}
+
+.square-extra-large {
+    width: 420px;
+    height: 420px;
+}
+
+/* Scroll hint */
+.scroll-hint {
+    text-align: center;
+    margin-top: 20px;
+    color: #f0e6dc;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0.5;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {opacity: 0.5;}
+    50% {opacity: 1;}
+    100% {opacity: 0.5;}
+}
