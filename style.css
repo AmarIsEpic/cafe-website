@@ -517,6 +517,41 @@ html {
     }
 }
 
+/* Gallery Section */
+.gallery-section {
+    padding: 80px 20px;
+    background-color: #967969;
+    position: relative;
+    overflow: hidden;
+}
 
+.gallery-section .section-title{
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.gallery-section .section-subtitle {
+    color: #f0e6dc;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.gallery-scroll-container {
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 20px 0 40px;
+    cursor: grab;
+}
+
+.gallery-scroll-container:active{
+    cursor: grabbing;
+}
+
+/* Hide scrollbar */
+.gallery-scroll-container::-webkit-scrollbar{
+    height: 8px;
+}
 
 
