@@ -312,14 +312,14 @@ html {
 }
 
 .about-featured .featured-title{
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     color: #5d4037;
     margin-bottom: 10px;
     font-family: 'Poppins', sans-serif;
 }
 
 .about-featured .featured-subtitle{
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     color: #775a50;
     margin-bottom: 30px;
     font-family: 'Dancing Script',cursive;
@@ -333,7 +333,7 @@ html {
 }
 
 .about-featured .about-text p{
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.8;
     color: #6d4c41;
     margin-bottom: 15px;
@@ -394,7 +394,7 @@ html {
 }
 
 .box-image {
-    height: 180px;
+    height: 210px;
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -418,7 +418,7 @@ html {
 }
 
 .box-content h3 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color:#5d4037;
     margin-bottom: 10px;
     font-family: 'Poppins', sans-serif;
@@ -427,7 +427,7 @@ html {
 
 .box-content p {
     color: #8d6e63;
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.5;
     margin-bottom: 15px;
     font-family: 'Poppins', sans-serif;
