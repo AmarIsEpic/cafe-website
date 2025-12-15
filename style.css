@@ -410,7 +410,29 @@ html {
     }
 }
 
+.about-featured {
+    padding: 120px 20px;
+    background-color: #f9f5f0;
+    text-align: center;
+}
 
+.featured-title {
+    font-size: 2.5rem;
+    color: #8d6e63;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.featured-subtitle {
+    font-size: 3.5rem;
+    color: #5d4037;
+    margin-bottom: 60px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
 
 
 
