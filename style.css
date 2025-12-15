@@ -554,4 +554,25 @@ html {
     height: 8px;
 }
 
+.gallery-scroll-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.gallery-scroll-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.gallery-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Gallery track */
+.gallery-track {
+    display: flex;
+    gap: 30px;
+    padding: 20px 40px;
+    width: max-content;
+}
 
