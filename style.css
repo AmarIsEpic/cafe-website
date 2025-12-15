@@ -191,7 +191,7 @@ html {
     z-index: 2;
 }
 
-.featured-title {
+.section-title {
     text-align: center;
     font-size: 4.5rem;
     color: #5d4037;
@@ -199,7 +199,7 @@ html {
     font-family: 'Poppins', sans-serif;
 }
 
-.featured-subtitle{
+.section-subtitle {
     text-align: center;
     font-size: 2.2rem;
     color: #775a50;
@@ -322,6 +322,24 @@ html {
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
 }
+
+.featured-title {
+    text-align: center;
+    font-size: 4.5rem;
+    color: #5d4037;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.featured-subtitle{
+    text-align: center;
+    font-size: 2.2rem;
+    color: #775a50;
+    margin-bottom: 60px;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+}
+
 
 .featured-boxes {
     display: grid;
