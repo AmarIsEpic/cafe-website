@@ -170,6 +170,7 @@ html {
     background-attachment: scroll;
     min-height: 100vh;
     position: relative;
+    background-color: #f9f5f0;
 }
 
 .menu-section::before{
@@ -181,6 +182,7 @@ html {
     bottom: 0;
     background-color: rgba(226, 203, 178, 0.75);
     z-index: 0;
+    backdrop-filter: blur(2px);
 }
 
 .container {
@@ -289,8 +291,9 @@ html {
 /*About section*/
 .about-featured {
     padding: 120px 20px;
-    background-color: #f9f5f0;
+    background-color: rgba(226, 203, 178, 0.75);
     text-align: center;
+    position: relative;
 }
 
 .about-featured .section-title{
