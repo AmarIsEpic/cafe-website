@@ -185,6 +185,18 @@ html {
     backdrop-filter: blur(2px);
 }
 
+.menu-section::after{
+    content: "";
+    position:absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(249, 245, 240, 0) 0%,
+    #e2cfb6 100%);
+    z-index: 1;
+}
+
 .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -291,7 +303,7 @@ html {
 /*About section*/
 .about-featured {
     padding: 120px 20px;
-    background-color: rgba(226, 203, 178, 0.75);
+    background-color: #e2cfb6;
     text-align: center;
     position: relative;
 }
@@ -318,12 +330,17 @@ html {
 }
 
 .about-featured .about-text p{
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     line-height: 1.8;
     color: #6d4c41;
     margin-bottom: 20px;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
+}
+
+.about-featured .container {
+    position: relative;
+    z-index: 2;
 }
 
 .featured-title {
