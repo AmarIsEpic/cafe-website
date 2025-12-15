@@ -110,7 +110,7 @@ html {
     width: 100%;
     left: 50%;
     transform: translateX(-50%);/*makes the underline start from the center*/
-    opacity: 0.3;
+    opacity: 0.15;
 }
 
 /*Logo*/
@@ -721,5 +721,65 @@ html {
     font-size: 1.1rem;
     color: #6d4c41;
     margin-bottom: 10px;
-    
+    font-family: 'Poppins', sans-serif;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.5;
 }
+
+.schedule-list li:before {
+    content: "-";
+    color: #8d8d8d;
+    font-size: 1.5rem;
+    position:absolute;
+    left:0;
+    top: -2px;
+}
+
+.quiz-prizes {
+    margin-bottom: 30px;
+}
+
+.prize-item {
+    display:flex;
+    align-items: center;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #e2cfb6;
+    transition: all 0.3 ease;
+}
+
+.price-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.prize-item.first-prize {
+    border: 3px solid #ffd700;
+    background: linear-gradient(135deg, #fff9c4, #fffde7);
+}
+
+.prize-icon{
+    font-size: 2.5rem;
+    margin-right: 20px;
+    min-width: 60px;
+    text-align: center;
+}
+
+.prize-details h4 {
+    font-size: 1.4rem;
+    color: #5d4037;
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.prize-description {
+    font-size: 1.1rem;
+    color: #6d4c41;
+    margin-bottom: 5px;
+    font-family: 'Poppins',sans-serif;
+}
+
+/* Join steps */
