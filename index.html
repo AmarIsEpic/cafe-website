@@ -591,20 +591,19 @@
             }
         );
 
-        reveals.forEach(reveal => observer.observe(reveal));
+        reveals.forEach(el => observer.observe(el));
 
         const aboutLink = document.querySelector('a[href="#about"]');
 
         aboutLink.addEventListener('click', () => {
-            reveals.forEach(reveal => {
-                reveal.classList.remove('active');
+            reveals.forEach(el => {
+                observer.unobserve(el);
+                el.classList.remove('active');
             });
 
             setTimeout(() => {
-                reveals.forEach(reveal => {
-                    observer.observe(reveal);
-                });
-            }, 200);
+                reveals.forEach(el => observer.observe(el));
+            }, 150);
         });
      </script>
 </body>
