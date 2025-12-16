@@ -111,7 +111,7 @@ html {
     min-height: 100vh;
     position: relative;
     margin-top: -80px;
-    padding-top: 80px;
+    padding-top: 40px;
     overflow: hidden;
 }
 
@@ -148,7 +148,7 @@ html {
 .hero-badge {
     font-family: 'Poppins',sans-serif;
     font-size: 1.4rem;
-    font-weight: 700;
+    font-weight: 800;
     color:white;
     margin-bottom: 15px;
     letter-spacing: 1px;
@@ -160,11 +160,12 @@ html {
 
 .hero-main-heading {
     font-family: 'Poppins', sans-serif;
-    font-size: 5rem;
-    font-weight: 700;
+    font-size: 8rem;
+    font-weight: 300;
     line-height: 1.1;
     margin-bottom: 25px;
     color:white;
+    letter-spacing: 5px;
 }
 
 .hero-title-line {
