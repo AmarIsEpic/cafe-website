@@ -587,7 +587,7 @@
                 });
             },
             {
-                threshold: 0.2
+                threshold: 0.25
             }
         );
 
@@ -599,11 +599,13 @@
             reveals.forEach(el => {
                 observer.unobserve(el);
                 el.classList.remove('active');
+
+                void el.offsetHeight;
             });
 
             setTimeout(() => {
                 reveals.forEach(el => observer.observe(el));
-            }, 150);
+            }, 250);
         });
      </script>
 </body>
