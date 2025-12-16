@@ -13,11 +13,6 @@ body {
     padding: 0;
     padding-top: 80px;
 }
-/*Hero section with background*/
-
-html {
-    scroll-behavior: smooth;
-}
 
 /*Navigation bar*/
 .navbar {
@@ -625,15 +620,12 @@ html {
     position: relative;
     border: 0px;
     will-change: transform;
-}
-
-.featured-box.active{
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.featured-box.active:hover{
+.featured-box:hover {
     transform: translateY(-12px) scale(1.05);
-    box-shadow: 0 22px 45px rgba(0,0,0, 0.18); 
+    box-shadow: 0 22px 45px rgba(0,0,0, 0.18);
 }
 
 .box-image img {
