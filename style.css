@@ -706,7 +706,7 @@ body {
         padding: 50px 20px 70px;
     }
 
-    .about-featured .feaured-title {
+    .about-featured .featured-title {
         font-size: 3rem;
     }
     
@@ -726,7 +726,7 @@ body {
         padding: 40px 20px 70px;
     }
 
-    .about-featured .feaured-title {
+    .about-featured .featured-title {
         font-size: 1.5rem;
     }
     
@@ -938,11 +938,12 @@ body {
 
 .quiz-schedule {
     margin-top: 30px;
-    background: #f9f5f0;
-    padding: 20px;
-    border-radius: 10px;
-    border-left: 4px solid #8d6e63;
     transition: transform 0.25s ease;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 5px solid #8d6e63;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
 .quiz-schedule:hover {
@@ -1038,15 +1039,6 @@ body {
     line-height: 1.3;
 }
 
-.quiz-schedule {
-    margin-top: 30px;
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    border-left: 5px solid #8d6e63;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-}
-
 .quiz-cta {
     margin-top: 60px;
     text-align: center;
@@ -1116,7 +1108,7 @@ body {
     transition: all 0.3 ease;
 }
 
-.price-item:hover {
+.prize-item:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
@@ -1206,6 +1198,12 @@ body {
     border-radius: 10px;
     border-left: 5px solid #ff9800;
     margin-top: 25px;
+    transition: transform 0.25s ease;
+}
+
+.important-note:hover {
+    transform: translateX(8px);
+    background: #faeddc;
 }
 
 .important-note p{
