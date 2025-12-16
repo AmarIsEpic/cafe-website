@@ -107,11 +107,12 @@ html {
 .hero-section {
     background: url(backgroundfix.png) no-repeat center center;
     background-size: cover;
-    background-position: 30%;
+    background-position: center center;
     min-height: 100vh;
     position: relative;
     margin-top: -80px;
     padding-top: 80px;
+    overflow: hidden;
 }
 
 .hero-section::before {
@@ -129,23 +130,24 @@ html {
     position: relative;
     z-index: 1;
     width: 100%;
-    max-width: 1200px;
+    max-width: 75vw;
     margin: 0 auto;
-    padding: 60px 40px 40px;
+    padding: 20px 40px 40px;
     min-height: calc(100vh - 80px);
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .hero-text-content {
     color:white;
-    max-width: 600px;
-    padding-top: 40px;
+    max-width: 750px;
+    padding-top: 20px;
 }
 
 .hero-badge {
     font-family: 'Poppins',sans-serif;
-    font-size: 1rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color:white;
     margin-bottom: 15px;
@@ -158,10 +160,10 @@ html {
 
 .hero-main-heading {
     font-family: 'Poppins', sans-serif;
-    font-size: 3.5rem;
+    font-size: 5rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     color:white;
 }
 
@@ -171,7 +173,7 @@ html {
 
 .hero-subtitle {
     font-family: 'Poppins',sans-serif;
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     font-weight: 400;
     color: rgba(255,255,255,0.8);
     margin-bottom: 30px;
@@ -180,7 +182,7 @@ html {
 
 .hero-links {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: white;
     margin-bottom: 50px;
 }
@@ -213,14 +215,15 @@ html {
 }
 
 .hero-btn {
-    padding: 12px 30px;
+    padding: 18px 45px;
     font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
     border-radius: 4px;
     transition: all 0.3s ease;
     display: inline-block;
+    min-width: 180px;
     border: 2px solid transparent;
 }
 
@@ -256,8 +259,8 @@ html {
 .stats-container {
     display:grid;
     grid-template-columns: repeat(3, 1fr);
-    gap:40px;
-    max-width: 500px;
+    gap:60px;
+    max-width: 700px;
 }
 
 .stat-item {
@@ -266,7 +269,7 @@ html {
 
 .stat-number {
     font-family: 'Poppins',sans-serif;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: 700;
     color: white;
     margin-bottom: 5px;
@@ -275,10 +278,10 @@ html {
 
 .stat-label {
     font-family: 'Poppins',sans-serif;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     color:#d7ccc8;
     line-height: 1.3;
-    max-width: 150px;
+    max-width: 200px;
 }
 
 /*Menu section*/
