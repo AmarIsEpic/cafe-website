@@ -84,7 +84,6 @@ html {
 }
 
 /*Logo*/
-
 .logo-img:hover{
     transform: none;
 }
@@ -104,6 +103,66 @@ html {
     padding-left: 7px;
 }
 
+/* Hero section */
+.hero-section {
+    background: url(backgroundfix.png) no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+    margin-top: -80px;
+    padding-top: 80px;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0, 0.5);
+    z-index: 0;
+}
+
+.hero-section-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px 40px;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: flex-start;
+}
+
+.hero-text-content {
+    color:white;
+    max-width: 600px;
+    padding-top: 40px;
+}
+
+.hero-main-badge {
+    font-family: 'Poppins',sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color:white;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.hero-main-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    color:white;
+}
+
+.hero-title-line {
+    display:block;
+}
 /*Menu section*/
 .menu-section{
     padding: 50px 20px 100px;
