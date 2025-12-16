@@ -925,6 +925,7 @@ body {
 .quiz-section {
     padding: 80px 20px;
     background: white;
+    min-height: 100vh;
 }
 
 .quiz-content {
@@ -932,7 +933,7 @@ body {
     grid-template-columns: 1.2fr 1fr;
     gap: 40px;
     margin-top: 50px;
-    align-items: start;
+    align-items: stretch;
 }
 
 .quiz-schedule {
@@ -952,11 +953,24 @@ body {
 
 .quiz-intro,
 .quiz-info {
-    background: #fafafa;
-    border-radius: 14px;
-    padding: 30px;
+    background: #ece7df;
+    border-radius: 16px;
+    padding: 35px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
 }
+
+.quiz-info {
+    justify-content: space-between;
+}
+
+.quiz-intro:hover,
+.quiz-info:hover {
+    transform: translateY(-5px);
+    transition: 0.3s ease;
+}
+
 
 .quiz-stat {
     display:flex;
@@ -1092,10 +1106,10 @@ body {
 .step {
     display: flex;
     align-items: flex-start;
-    padding: 15px;
+    padding: 18px;
     background: #f9f5f0;
-    border-radius: 10px;
-    border-left: 4px solid #8d6e63;
+    border-radius: 12px;
+    border-left: 5px solid #8d6e63;
 }
 
 .step-number {
@@ -1129,10 +1143,10 @@ body {
 
 .important-note {
     background: #fff3e0;
-    padding: 15px;
-    border-radius: 0px;
-    border-left: 4px solid #ff9800;
-    margin-top: 20px;
+    padding: 18px;
+    border-radius: 10px;
+    border-left: 5px solid #ff9800;
+    margin-top: 25px;
 }
 
 .important-note p{
