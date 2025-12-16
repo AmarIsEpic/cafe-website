@@ -972,6 +972,20 @@ body {
     justify-content: space-between;
 }
 
+.quiz-info h4 {
+    font-size: 2rem;
+    color: #5d4037;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.quiz-info p {
+    font-size: 1.15rem;
+    color: #6d4c41;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
 .quiz-intro h3 {
     font-size: 2rem;
     color: #5d4037;
