@@ -888,3 +888,71 @@ html {
     border-collapse: collapse;
     font-family: 'Poppins', sans-serif;
 }
+
+.leaderboard-table th {
+    background: #8d6e63;
+    color: white;
+    padding: 18px 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.leaderboard-table th:first-child{
+    border-top-left-radius: 10px;
+    width: 80px;
+}
+
+
+.leaderboard-table tr:last-child td {
+    border-bottom: none;
+}
+
+.leaderboard-table:hover {
+    background-color: #f9f5f0;
+}
+
+.rank-cell {
+    font-weight: bold;
+    text-align: center;
+}
+
+.team-cell {
+    font-weight: 500;
+}
+
+.score-cell {
+    font-weight: bold;
+    text-align: right;
+    color: #8d6e63;
+}
+
+/*Podium styles*/
+.podium-row {
+    background: linear-gradient(135deg, #fff9c4, #fffde7) !important;
+    border: 2px solid #ffd700;
+}
+
+.podium-row .rank-cell {
+    color: #d4af37;
+    font-size: 1.3rem;
+}
+
+.loading{
+    text-align: center;
+    padding: 60px;
+    font-size: 1.3rem;
+    color: #8d6e63;
+    font-family: 'Poppins', sans-serif;
+}
+
+.leaderboard-info {
+    margin-top: 30px;
+    text-align: center;
+    color: #6d4c41;
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
