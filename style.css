@@ -285,6 +285,92 @@ html {
     max-width: 200px;
 }
 
+@media (max-width: 1200px) {
+    .hero-main-heading {
+        font-size: 6rem;
+    }
+
+    .hero-subtitle{
+        font-size: 2rem;
+    }
+
+    .hero-content-container {
+        max-width: 90vw;
+    }
+
+    .stats-container {
+        gap:40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content-container {
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-text-content {
+        max-width: 100%;
+    }
+
+    .hero-main-heading{
+        font-size: 4.5rem;
+    }
+
+    .hero-subtitle{
+        font-size: 1.8rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        justify-items: center;
+    }
+
+    .stat-item {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-main-heading{
+        font-size: 3.2rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+
+    .hero-badge {
+        font-size: 1rem;
+    }
+
+    .hero-btn {
+        font-size: 1rem;
+        padding: 14px 20px;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .stat-label {
+        font-size: 1rem;
+    }
+    
+}
 /*Menu section*/
 .menu-section{
     padding: 50px 20px 100px;
