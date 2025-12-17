@@ -621,5 +621,22 @@
             });
         });
      </script>
+     <script>
+        const headers = document.querySelectorAll('.category-header');
+
+        headers.forEach(header => {
+            header.addEventListener('click', () => {
+                if (window.innerWidth > 900) return;
+
+                const category = header.parentElement;
+
+                document.querySelector('.category').forEach(cat => {
+                    if (cat !== category) cat.classList.remove('active');
+                });
+
+                category.classList.toggle('active');
+            });
+        });
+     </script>
 </body>
 </html>
