@@ -956,9 +956,11 @@ body {
 
 /* Quiz section */
 .quiz-section {
+    background: url(Images/Lines2bg.png) no-repeat center center;
+    background-size: cover;
     padding: 60px 20px;
-    background: white;
     min-height: 100vh;
+    overflow: hidden;
 }
 
 .quiz-content {
