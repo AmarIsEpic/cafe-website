@@ -944,17 +944,14 @@ body {
 /* Gallery Section */
 .gallery-section {
     padding: 80px 0;
+    background: #967969;
+    overflow: hidden;
 }
 
 .gallery-section .container{
-    width: 100%;
-    height: 100%;
-    padding: 0 10%;
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    max-width: 100%;
+    padding: 0 5%;
+    display: block;
 }
 
 .gallery-section .section-title{
@@ -976,10 +973,11 @@ body {
 }
 
 .gallery-scroll-container {
-    height: 360px;
+    height: 340px;
     overflow-x:auto;
     overflow-y: hidden;
     cursor: grab;
+    scroll-behavior: smooth;
 }
 
 /* Hide scrollbar */
@@ -993,23 +991,24 @@ body {
 
 .gallery-track {
     display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    height: 100%;
+    align-items: flex-end;
+    gap: 18px;
     width: max-content;
+    padding-bottom: 10px;
 }
 
 .gallery-item {
-    position: relative;
+    flex-shrink: 0;
     border-radius: 14px;
     overflow: hidden;
-    cursor: pointer;
+    background: black;
 }
 
 .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
     transition: transform 0.4s ease;
 }
 
@@ -1017,40 +1016,17 @@ body {
     transform: scale(1.08);
 }
 
-.gallery-item {
-    flex-shrink: 0;
-    border-radius: 14px;
-    overflow: hidden;
-}
+.size-small { height: 150px; width: 200px;}
+.size-medium { height: 220px; width: 200px;}
+.size-large { height: 280px; width: 200px;}
+.size-tall { height: 320px; width: 200px;}
+.size-wide { height: 200px; width: 360px;}
 
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.05);
-}
-
-
-/* Scroll hint */
 .scroll-hint {
+    margin-top: 15px;
     text-align: center;
-    margin-top: 20px;
-    color: #f0e6dc;
-    font-size: 1.2rem;
-    font-family: 'Poppins', sans-serif;
-    opacity: 0.8;
-    animation: pulse 2s infinite;
-    position: relative;
-    padding: 10px 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 25px;
-    display: inline-block;
+    font-size: 0.9rem;
+    opacity: 0.7;
 }
 
 .scroll-hint::before{
@@ -1070,18 +1046,6 @@ body {
 }
 
 
-.size-small { height: 160px; }
-.size-medium { height: 220px; }
-.size-large { height: 280px; }
-.size-tall { height: 320px; }
-.size-wide { height: 200px; width: 360px;}
-
-.scroll-hint {
-    margin-top: 15px;
-    text-align: center;
-    font-size: 0.9rem;
-    opacity: 0.7;
-}
 /* Quiz section */
 .quiz-section {
     background: url(Images/Lines2bg.png) no-repeat center center;

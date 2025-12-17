@@ -679,8 +679,16 @@
         const gallery = document.querySelector('.gallery-scroll-container');
 
         gallery.addEventListener('wheel', (e) => {
-            e.preventDefault();
-            gallery.scrollLeft += e.deltaY * 1.2;
+            const atStart = gallery.scrollLeft === 0;
+            const atEnd = Math.ceil(gallery.scrollLeft + gallery.clientWidth) >= gallery.scrollWidth;
+
+            if(
+                (e.deltaY > 0 && !atEnd) ||
+                (e.deltaY < 0 && !atStart) 
+            ) {
+                e.preventDefault();
+                gallery.scrollLeft += e.deltaY;
+            }
         }, { passive: false });
      </script>
 </body>
