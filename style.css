@@ -516,6 +516,16 @@ body {
     transition: none;
 }
 
+.menu-hint {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #6d4c41;
+    margin-bottom: 30px;
+    opacity: 0.85;
+    display:none;
+}
+
 @media (max-width: 900px) {
     .menu-categories{
         grid-template-columns: 1fr;
@@ -546,6 +556,8 @@ body {
         display: flex;
         text-align: center;
         justify-content: center;
+        line-height: 1;
+        padding: 0;
     }
 
     .category.active .toggle-btn {
@@ -555,7 +567,7 @@ body {
     }
 
     .menu-items {
-        min-height: 0;
+        max-height: 0;
         overflow: hidden;
         padding: 0 18px;
         transition: max-height 0.4s ease, padding 0.3s ease;
@@ -568,6 +580,10 @@ body {
 
     .category.active .toggle-btn{
         transform: rotate(45deg);
+    }
+
+    .menu-hint {
+        display: block;
     }
 }
 
