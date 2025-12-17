@@ -519,10 +519,10 @@ body {
 .menu-hint {
     text-align: center;
     font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
+    font-size: 1.15rem;
     color: #6d4c41;
-    margin-bottom: 30px;
-    opacity: 0.85;
+    margin-bottom: 35px;
+    opacity: 0.9;
     display:none;
 }
 
@@ -542,6 +542,7 @@ body {
     }
 
     .toggle-btn {
+        display: flex;
         position: relative;
         width: 32px;
         height: 32px;
@@ -557,12 +558,27 @@ body {
         position: absolute;
         top: 50%;
         left: 50%;
+        width: 14px;
+        height: 2px;
+        background: #5d4037;
+        transform: translate(-50%, -50%);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .toggle-btn::after{
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    .category.active .toggle-btn::before{
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .category.active .toggle-btn::after{
+        transform: translate(-50%, -50%) rotate(-45deg);
     }
 
     .category.active .toggle-btn {
-        transform: rotate(45deg);
-        background: #8d6e63;
-        color: white;
+        background: #bea090;
     }
 
     .menu-items {
