@@ -533,11 +533,25 @@ body {
 
     .toggle-btn {
         display: block;
-        background: none;
+        background: #f3ebe1;
         border: none;
-        font-size: 26px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        font-size: 22px;
+        font-weight: 300;
+        color: #5d4037;
         cursor: pointer;
-        transition: transform 0.3s ease;
+        transition: all 0.3s ease;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .category.active .toggle-btn {
+        transform: rotate(45deg);
+        background: #8d6e63;
+        color: white;
     }
 
     .menu-items {

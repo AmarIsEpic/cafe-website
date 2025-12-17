@@ -630,7 +630,7 @@
 
                 const category = header.parentElement;
 
-                document.querySelector('.category').forEach(cat => {
+                document.querySelectorAll('.category').forEach(cat => {
                     if (cat !== category) cat.classList.remove('active');
                 });
 
