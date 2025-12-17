@@ -340,8 +340,8 @@ body {
         top: 80px;
         left: 0;
         width: 100%;
-        background: rgba(0,0,0,0.15);
-        backdrop-filter: blur(5px);
+        background: rgba(0,0,0,0.12);
+        backdrop-filter: blur(4px);
         -webkit-backdrop-filter: blur(12px);
         flex-direction: column;
         align-items: center;
@@ -1120,6 +1120,32 @@ body {
     100% {opacity: 0.5;}
 }
 
+.gallery-section {
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.gallery-scroll-container {
+    position: relative;
+    height: 360px;
+    overflow: hidden;
+}
+
+.gallery-track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(220px, auto);
+    gap: 16px;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.gallery-track::-webkit-scrollbar {
+    display: none;
+}
 /* Quiz section */
 .quiz-section {
     background: url(Images/Lines2bg.png) no-repeat center center;
