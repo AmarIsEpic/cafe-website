@@ -542,22 +542,21 @@ body {
     }
 
     .toggle-btn {
-        display: block;
-        background: #f3ebe1;
-        border: none;
+        position: relative;
         width: 32px;
         height: 32px;
         border-radius: 50%;
-        font-size: 22px;
-        font-weight: 300;
-        color: #5d4037;
+        background: #f3ebe1;
+        border: none;
         cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        line-height: 1;
-        padding: 0;
+    }
+
+    .toggle-btn::before,
+    .toggle-btn::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
     }
 
     .category.active .toggle-btn {
