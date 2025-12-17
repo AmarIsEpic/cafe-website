@@ -349,6 +349,27 @@ body {
         padding: 0;
         transition: max-height 0.4s ease;
     }
+
+    .navlink.active {
+        max-height: 500px;
+        padding: 30px 0;
+    }
+
+    .navlink li a {
+        font-size: 1.4rem;
+    }
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
 }
 
 @media (max-width: 1200px) {

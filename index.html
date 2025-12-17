@@ -657,5 +657,22 @@
             box.classList.add('jump-animate');
         })
      </script>
+     <!--Mobile navbar-->
+     <script>
+        const hamburger= document.getElementById("hamburger");
+        const navlink = document.getElementById("navlink");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navlink.classList.toggle("active");
+        });
+
+        document.querySelector(".navlink a").forEach (link => {
+            link.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navlink.classList.remove("active");
+            });
+        });
+     </script>
 </body>
 </html>
