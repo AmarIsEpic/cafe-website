@@ -1302,8 +1302,6 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-
-
 .step-content h5 {
     font-size: 1.2rem;
     color: #5d4037;
@@ -1337,6 +1335,17 @@ body {
     font-size: 1rem;
     color: #5d4037;
     font-family: 'Poppins', sans-serif;
+}
+
+@keyframes jump {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-14px); }
+    60% { transform: translateY(6px); }
+    100% { transform: translateY(0); }
+}
+
+.jump-animate {
+    animation: jump 0.6s ease;
 }
 
 /* Leaderboard Section */

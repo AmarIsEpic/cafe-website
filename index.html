@@ -514,7 +514,7 @@
                     </div>
                 </div>
 
-                <div class="quiz-info">
+                <div class="quiz-info" id="how-to-join">
                     <h4>How to Join</h4>
                     <p>Follow the steps below to join the quiz and put your knowledge to the test</p>
                     <div class="join-steps">
@@ -589,6 +589,7 @@
         </div>
      </section>
 
+     <!--About section boxes appear aniamtion-->
      <script>
         const reveals = document.querySelectorAll('.reveal');
 
@@ -622,6 +623,7 @@
             });
         });
      </script>
+     <!--Menu screen mobile-->
      <script>
         const headers = document.querySelectorAll('.category-header');
 
@@ -638,6 +640,16 @@
                 category.classList.toggle('active');
             });
         });
+     </script>
+    <!--Jump animation cta-btn-->
+     <script>
+        document.querySelector('.cta-btn').addEventListener('click', () => {
+            const box = document.querySelector('#how-to-join');
+
+            box.classList.remove('jump-animate');
+            void box.offsetWidth;
+            box.classList.add('jump-animate');
+        })
      </script>
 </body>
 </html>
