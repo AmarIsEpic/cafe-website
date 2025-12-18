@@ -675,39 +675,6 @@
         });
      </script>
     <!--Horizontal gallery-->
-     <script>
-        const gallery = document.querySelector('.gallery-scroll-container');
-        if (gallery) {
-
-        let isScrolling = false;
-        let currentScroll = 0;
-        let targetScroll = 0;
-
-        const speed = 0.08;
-        gallery.addEventListener('wheel', (e) => {
-            e.preventDefault();
-
-        
-        const maxScroll = gallery.scrollWidth - gallery.clientWidth;
-        targetScroll += e.deltaY * 1.2;
-        targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
-        
-        if (!isScrolling) smoothScroll();
-        }, { passive: false });
-
-        function smoothScroll() {
-            isScrolling = true;
-            currentScroll += (targetScroll - currentScroll) * speed;
-            gallery.scrollLeft = currentScroll;
-
-            if(Math.abs(targetScroll - currentScroll ) > 0.5) {
-                requestAnimationFrame(smoothScroll);
-            } else {
-                isScrolling = false;
-            }
-        }
-    }
-    </script>
     <script>
         const gallery = document.querySelector('.gallery-scroll-container');
 
@@ -715,9 +682,11 @@
             let autoScrollRAF = null;
             let autoScrollTimeout = null;
             let isUserInteracting = false;
+            let targetScroll = gallery.scrollLeft;
 
             const AUTO_SCROLL_SPEED = 0.25;
             const IDLE_DELAY = 1500;
+            const INERTIA_SPEED = 0.08;
 
             function startAutoScroll() {
                 stopAutoScroll();
@@ -731,6 +700,7 @@
                     }
 
                     gallery.scrollLeft += AUTO_SCROLL_SPEED;
+                    gallery.scrollLeft = targetScroll;
                     autoScrollRAF = requestAnimationFrame(step);
                 }
 
@@ -743,21 +713,39 @@
                     autoScrollRAF= null;
                 }
             }
+            
+            /*Manual wheel scroll*/
+            function smoothScroll() {
+                gallery.scrollLeft += (targetScroll - gallery.scrollLeft) *INERTIA_SPEED;
 
-            function resetIdleTimer() {
-                isUserInteracting = true;
-                stopAutoScroll();
-
-                clearTimeout(autoScrollTimeout);
-                autoScrollTimeout = setTimeout(() => {
-                    isUserInteracting = false;
-                    startAutoScroll();
-                }, IDLE_DELAY);
+                if(Math.abs(targetScroll-gallery.scrollLeft) > 0.5) {
+                    requestAnimationFrame(smoothScroll);
+                }
             }
 
             gallery.addEventListener('wheel', (e) => {
-                resetIdleTimer();
-            }, { passive: true });
+                const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+                const atStart = gallery.scrollLeft <= 1;
+                const atEnd = gallery.scrollLeft >= maxScroll - 1;
+            
+                if(
+                    (e.deltaY > 0 && !atEnd) || 
+                    (e.deltaY < 0 && !atStart) 
+                ) {
+                    e.preventDefault();
+                    stopAutoScroll();
+                    targetScroll += e.deltaY * 1.5;
+                    targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
+                    smoothScroll();
+                    resetIdleTimer();
+                }
+            }, { passive: false });
+
+
+            function resetIdleTimer() {
+            clearTimeout(autoScrollTimeout);
+            autoScrollTimeout = setTimeout(startAutoScroll, IDLE_DELAY);
+            }
 
             gallery.addEventListener('mousedown', resetIdleTimer);
             gallery.addEventListener('touchstart', resetIdleTimer);
