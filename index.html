@@ -678,25 +678,34 @@
      <script>
         const gallery = document.querySelector('.gallery-scroll-container');
         if (gallery) {
-            gallery.addEventListener('wheel', (e) => {
 
-        const maxScroll = gallery.scrollWidth - gallery.clientWidth;
-        const current = gallery.scrollLeft;
+        let isScrolling = false;
+        let currentScroll = 0;
+        let targetScroll = 0;
 
-        const scrollingRight = e.deltaY > 0;
-        const scrollingiLeft = e.deltaY < 0;
-
-        const atEnd = current >= maxScroll - 1;
-        const atStart = current <= 1;
-
-        if(
-            (scrollingRight && !atEnd) || 
-            (scrollingLeft && !atStart)
-        ) {
+        const speed = 0.08;
+        gallery.addEventListener('wheel', (e) => {
             e.preventDefault();
-            gallery.scrollLeft += e.deltaY * 2.5;
+
+        
+        const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+        targetScroll += e.deltaY * 1.2;
+        targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
+        
+        if (!isScrolling) smoothScroll();
+        }, { passive: false });
+
+        function smoothScroll() {
+            isScrolling = true;
+            currentScroll += (targetScroll - currentScroll) * speed;
+            gallery.scrollLeft = currentScroll;
+
+            if(Math.abs(targetScroll - currentScroll ) > 0.5) {
+                requestAnimationFrame(smoothScroll);
+            } else {
+                isScrolling = false;
+            }
         }
-        } , { passive: false });
     }
      </script>
 </body>

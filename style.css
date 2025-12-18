@@ -978,7 +978,7 @@ body {
 
 .gallery-scroll-container {
     flex: 1;
-    height: 65vh;
+    height: 50vh;
     overflow-x:auto;
     overflow-y: hidden;
     cursor: grab;
@@ -1019,11 +1019,11 @@ body {
     transform: scale(1.08);
 }
 
-.size-small { height: 150px;}
-.size-medium { height: 220px; }
-.size-large { height: 280px; }
-.size-tall { height: 320px; }
-.size-wide { height: 200px; }
+.size-small { height: 120px;}
+.size-medium { height: 180px; }
+.size-large { height: 230px; }
+.size-tall { height: 270px; }
+.size-wide { height: 170px; }
 
 .scroll-hint {
     margin-top: 15px;
