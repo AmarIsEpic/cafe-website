@@ -679,66 +679,71 @@
         const gallery = document.querySelector('.gallery-scroll-container');
 
         if(gallery) {
+
+            gallery.innerHTML += gallery.innerHTML;
+
             let autoScrollRAF = null;
             let autoScrollTimeout = null;
-            let isUserInteracting = false;
             let targetScroll = gallery.scrollLeft;
 
-            const AUTO_SCROLL_SPEED = 0.25;
+            const AUTO_SCROLL_SPEED = 0.3;
             const IDLE_DELAY = 1500;
             const INERTIA_SPEED = 0.08;
+
+            const singleWidth = gallery.scrollWidth / 2;
+
+            function stopAutoScroll() {
+                if(autoScrollRAF) {
+                    cancelAnimationFrame(autoScrollRAF);
+                    autoScrollRAF = null;
+                }
+            }
 
             function startAutoScroll() {
                 stopAutoScroll();
 
                 function step() {
-                    const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+                    targetScroll += AUTO_SCROLL_SPEED;
 
-                    if(gallery.scrollLeft >= maxScroll - 1) {
-                        stopAutoScroll();
-                        return;
+                    if (targetScroll >= singleWidth) {
+                        targetScroll -= singleWidth;
+                        gallery.scrollLeft -= singleWidth;
                     }
 
-                    gallery.scrollLeft += AUTO_SCROLL_SPEED;
-                    gallery.scrollLeft = targetScroll;
+                    gallery.scrollLeft += (targetScroll - gallery.scrollLeft) * INERTIA_SPEED;
+
                     autoScrollRAF = requestAnimationFrame(step);
                 }
-
                 autoScrollRAF = requestAnimationFrame(step);
             }
 
-            function stopAutoScroll() {
-                if(autoScrollRAF) {
-                    cancelAnimationFrame(autoScrollRAF);
-                    autoScrollRAF= null;
-                }
-            }
-            
-            /*Manual wheel scroll*/
-            function smoothScroll() {
-                gallery.scrollLeft += (targetScroll - gallery.scrollLeft) *INERTIA_SPEED;
+                function smoothScroll(){
+                    gallery.scrollLeft += (targetScroll - gallery.scrollLeft) * INERTIA_SPEED;
 
-                if(Math.abs(targetScroll-gallery.scrollLeft) > 0.5) {
-                    requestAnimationFrame(smoothScroll);
+                    if(Math.abs(targetScroll - gallery.scrollLeft) > 0.5) {
+                        requestAnimationFrame(smoothScroll);
+                    }
                 }
-            }
 
             gallery.addEventListener('wheel', (e) => {
-                const maxScroll = gallery.scrollWidth - gallery.clientWidth;
-                const atStart = gallery.scrollLeft <= 1;
-                const atEnd = gallery.scrollLeft >= maxScroll - 1;
-            
-                if(
-                    (e.deltaY > 0 && !atEnd) || 
-                    (e.deltaY < 0 && !atStart) 
-                ) {
-                    e.preventDefault();
-                    stopAutoScroll();
-                    targetScroll += e.deltaY * 1.5;
-                    targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
-                    smoothScroll();
-                    resetIdleTimer();
+                e.preventDefault();
+                stopAutoScroll();
+
+                targetScroll += e.deltaY * 1.5;
+
+                if (targetScroll < 0) {
+                    targetScroll += singleWidth;
+                    gallery.scrollLeft += singleWidth;
                 }
+
+                if (targetScroll >= singleWidth) {
+                    targetScroll -= singleWidth;
+                    gallery.scrollLeft -= singleWidth;
+                }
+
+                smoothScroll();
+                resetIdleTimer();
+
             }, { passive: false });
 
 
