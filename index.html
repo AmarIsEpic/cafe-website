@@ -707,6 +707,64 @@
             }
         }
     }
-     </script>
+    </script>
+    <script>
+        const gallery = document.querySelector('.gallery-scroll-container');
+
+        if(gallery) {
+            let autoScrollRAF = null;
+            let autoScrollTimeout = null;
+            let isUserInteracting = false;
+
+            const AUTO_SCROLL_SPEED = 0.25;
+            const IDLE_DELAY = 1500;
+
+            function startAutoScroll() {
+                stopAutoScroll();
+
+                function step() {
+                    const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+
+                    if(gallery.scrollLeft >= maxScroll - 1) {
+                        stopAutoScroll();
+                        return;
+                    }
+
+                    gallery.scrollLeft += AUTO_SCROLL_SPEED;
+                    autoScrollRAF = requestAnimationFrame(step);
+                }
+
+                autoScrollRAF = requestAnimationFrame(step);
+            }
+
+            function stopAutoScroll() {
+                if(autoScrollRAF) {
+                    cancelAnimationFrame(autoScrollRAF);
+                    autoScrollRAF= null;
+                }
+            }
+
+            function resetIdleTimer() {
+                isUserInteracting = true;
+                stopAutoScroll();
+
+                clearTimeout(autoScrollTimeout);
+                autoScrollTimeout = setTimeout(() => {
+                    isUserInteracting = false;
+                    startAutoScroll();
+                }, IDLE_DELAY);
+            }
+
+            gallery.addEventListener('wheel', (e) => {
+                resetIdleTimer();
+            }, { passive: true });
+
+            gallery.addEventListener('mousedown', resetIdleTimer);
+            gallery.addEventListener('touchstart', resetIdleTimer);
+            gallery.addEventListener('mouseenter', resetIdleTimer);
+
+            startAutoScroll();
+        }
+    </script>
 </body>
 </html>
