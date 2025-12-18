@@ -684,10 +684,10 @@
         const current = gallery.scrollLeft;
 
         const scrollingRight = e.deltaY > 0;
-        const scrollingLeft = e.deltaY < 0;
+        const scrollingiLeft = e.deltaY < 0;
 
-        const atEnd = currrent >= maxScroll - 1;
-        const atStart = curent <= 1;
+        const atEnd = current >= maxScroll - 1;
+        const atStart = current <= 1;
 
         if(
             (scrollingRight && !atEnd) || 
