@@ -673,6 +673,10 @@
         let startX;
         let scrollLeft;
 
+        gallery.querySelectorAll('img').forEach(img => {
+            img.addEventListener('dragstart', (e) => e.preventDefault());
+        })
+
         gallery.addEventListener('mousedown', (e) => {
             isScrolling = true;
             gallery.style.cursor = 'grabbing';
