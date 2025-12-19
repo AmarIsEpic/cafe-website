@@ -985,6 +985,7 @@ body {
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
     user-select: none;
+    margin-top: 25px; /*Delete in case of error*/
 }
 
 /* Hide scrollbar */
@@ -1103,22 +1104,59 @@ body {
     transform: scale(0.95);
 }
 
-.scroll-hint {
-    margin-top: 20px;
+.gallery-bottom-section {
+    margin-top: 50px;
     text-align: center;
-    font-size: 1rem;
-    color: white;
-    opacity: 0.8;
+    padding: 0 20px;
+}
+
+.gallery-tagline {
     font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+}
+
+.gallery-hashtag {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #f0e6dc;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.scroll-hint {
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: white;
+    opacity: 0.9;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    background: rgba(255,255,255,0.1);
+    padding: 12px 24px;
+    border-radius: 25px;
+    display: inline-block;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
 .scroll-hint::before{
-    content: "<-";
+    content: "←";
+    margin-right: 12px;
+    font-size: 1.3rem;
     margin-right: 10px;
 }
 
 .scroll-hint::after{
-    content: "->";
+    content: "→";
+    margin-left: 12px;
+    font-size: 1.3rem;
     margin-left: 10px;
 }
 
