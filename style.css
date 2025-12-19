@@ -977,10 +977,9 @@ body {
 }
 
 .gallery-scroll-container {
-    height: 750px;
-    overflow-x:auto;
+    height: 520px;
+    overflow-x: auto;
     overflow-y: hidden;
-    scroll-behavior: smooth;
 }
 
 /* Hide scrollbar */
@@ -992,39 +991,31 @@ body {
     cursor: grabbing;
 }
 
-.gallery-track {
-    column-count: 4;
+.gallery-track {    
+    column-width: 260px;
     column-gap: 16px;
-    padding: 10px;
     width: max-content;
 }
 
 .gallery-item {
-    break-inside: avoid;
-    display: inline-block;
-    width: 220px;
+    border-radius: 14px;
+    overflow: hidden;
 }
 
 .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.35s ease;
 }
 
 .gallery-item:hover img {
     transform: scale(1.08);
 }
 
-.size-small { height: 120px;}
-.size-medium { height: 180px; }
-.size-large { height: 230px; }
-.size-tall { height: 270px; }
-.size-wide { height: 170px; }
-
-.w-small { width: 180px; }
-.w-medium { width: 260px; }
-.w-large { width: 340px; }
+.size-small { grid-row: span 1;}
+.size-medium { grid-row: span 2; }
+.size-large { grid-row: span 3; }
+.size-tall { grid-row: span 4; }
 
 .scroll-hint {
     margin-top: 15px;
