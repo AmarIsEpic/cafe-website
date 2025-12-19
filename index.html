@@ -648,34 +648,10 @@
                 gallery.scrollLeft = scrollLeft - walk;
             });
 
-            let isWheelSrolling = false;
-            let targetScrollLeft = gallery.scrollLeft;
-
             gallery.addEventListener('wheel', (e) => {
                 e.preventDefault();
-                targetScrollLeft += e.deltaY * 1.5;
-                targetScrollLeft = Math.max(0, Math.min(targetScrollLeft, gallery.scrollWidth - gallery.clientWidth));
-
-                if (!isWheelSrolling) {
-                    isWheelSrolling = true;
-                    smoothScroll();
-                }
-            });
-
-            function smoothScroll() {
-                const currentScroll = gallery.scrollLeft;
-                const distance = targetScrollLeft - currentScroll;
-
-                if(Math.abs(distance) < 0.5) {
-                    gallery.scrollLeft = targetScrollLeft;
-                    isWheelSrolling = false;
-                    return;
-                }
-
-                gallery.scrollLeft += distance * 0.15;
-
-                requestAnimationFrame(smoothScroll);
-            }
+                gallery.scrollLeft += e.deltaY * 1.2;
+            }, { passive: false });
         });
     </script>
 </body>
