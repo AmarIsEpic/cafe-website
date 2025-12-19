@@ -1214,6 +1214,88 @@ body {
     }
 }
 
+@media (max-width: 480px) {
+    .gallery-section {
+        min-height: 100vh;
+        padding: 40px 0;
+    }
+
+    .gallery-section .section-title {
+        font-size: 2.3rem;
+    }
+
+    .gallery-section .section-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .gallery-scroll-container {
+        height: 450px;
+    }
+
+    .gallery-column {
+        width: 200px;
+        gap: 12px;
+    }
+
+    .gallery-track {
+        gap: 12px;
+    }
+
+    .gallery-column:nth-child(1) .gallery-item:nth-child(1),
+    .gallery-column:nth-child(4) .gallery-item:nth-child(1),
+    .gallery-column:nth-child(7) .gallery-item:nth-child(1) {
+        height: 142px;
+    }
+
+    .gallery-column:nth-child(1) .gallery-item:nth-child(2),
+    .gallery-column:nth-child(4) .gallery-item:nth-child(2),
+    .gallery-column:nth-child(7) .gallery-item:nth-child(2) {
+        height: 142px;
+    }
+
+    .gallery-column:nth-child(1) .gallery-item:nth-child(3),
+    .gallery-column:nth-child(4) .gallery-item:nth-child(3),
+    .gallery-column:nth-child(7) .gallery-item:nth-child(3) {
+        height: 142px;
+    }
+
+    .gallery-column:nth-child(1) .gallery-item:nth-child(1),
+    .gallery-column:nth-child(4) .gallery-item:nth-child(1),
+    .gallery-column:nth-child(7) .gallery-item:nth-child(1) {
+        height: 219px;
+    }
+    .gallery-column:nth-child(1) .gallery-item:nth-child(2),
+    .gallery-column:nth-child(4) .gallery-item:nth-child(2),
+    .gallery-column:nth-child(7) .gallery-item:nth-child(2) {
+        height: 219px;
+    }
+
+    .gallery-column:nth-child(3) .gallery-item:nth-child(1),
+    .gallery-column:nth-child(6) .gallery-item:nth-child(1) {
+        height: 104px;
+    }
+
+    .gallery-column:nth-child(3) .gallery-item:nth-child(2),
+    .gallery-column:nth-child(6) .gallery-item:nth-child(2) {
+        height: 104px;
+    }
+
+    .gallery-column:nth-child(3) .gallery-item:nth-child(3),
+    .gallery-column:nth-child(6) .gallery-item:nth-child(3) {
+        height: 104px;
+    }
+
+    .gallery-column:nth-child(3) .gallery-item:nth-child(4),
+    .gallery-column:nth-child(6) .gallery-item:nth-child(4) {
+        height: 104px;
+    }
+
+    .scroll-hint {
+        font-size: 0.85rem;
+        margin-top: 15px;
+    } 
+}
+
 /* Quiz section */
 .quiz-section {
     background: url(Images/Lines2bg.png) no-repeat center center;
