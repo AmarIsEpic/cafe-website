@@ -612,7 +612,7 @@
      </script>
     <!--Horizontal gallery-->
     <script>
-        document.addEventListener('DOMContentLoaded'), function() {
+        document.addEventListener('DOMContentLoaded', function() {
             const gallery = document.querySelector('.gallery-scroll-container');
 
             if(gallery) {
@@ -647,10 +647,10 @@
             });
 
             gallery.addEventListener('wheel', () => {
-                e.preventDefault;
-                gallery.scrollLeftt += e.deltaY;
+                e.preventDefault();
+                gallery.scrollLeft += e.deltaY;
             });
-        }
+        });
     </script>
 </body>
 </html>
