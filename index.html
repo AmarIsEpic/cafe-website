@@ -363,7 +363,6 @@
                     <div class="gallery-column">
                         <div class="gallery-item"><img src="Images/test.png"></div>
                         <div class="gallery-item"><img src="Images/test.png"></div>
-                        <div class="gallery-item"><img src="Images/test.png"></div>
                     </div>
 
                     <!--Column 3-->
@@ -375,6 +374,7 @@
                     
                     <!--Column 4-->
                     <div class="gallery-column">
+                        <div class="gallery-item"><img src="Images/test.png"></div>
                         <div class="gallery-item"><img src="Images/test.png"></div>
                         <div class="gallery-item"><img src="Images/test.png"></div>
                         <div class="gallery-item"><img src="Images/test.png"></div>
@@ -391,11 +391,11 @@
                     <div class="gallery-column">
                         <div class="gallery-item"><img src="Images/test.png"></div>
                         <div class="gallery-item"><img src="Images/test.png"></div>
-                        <div class="gallery-item"><img src="Images/test.png"></div>
                     </div>
 
                     <!--Column 7-->
                     <div class="gallery-column">
+                        <div class="gallery-item"><img src="Images/test.png"></div>
                         <div class="gallery-item"><img src="Images/test.png"></div>
                         <div class="gallery-item"><img src="Images/test.png"></div>
                         <div class="gallery-item"><img src="Images/test.png"></div>
@@ -615,10 +615,12 @@
         document.addEventListener('DOMContentLoaded', function() {
             const gallery = document.querySelector('.gallery-scroll-container');
 
-            if(gallery) {
                 let isScrolling = false;
                 let startX;
                 let scrollLeft;
+            if(!gallery) {
+                console.error('Gallery element not found!');
+                return;
             }
 
             gallery.addEventListener('mousedown', (e) => {
@@ -642,14 +644,38 @@
                 if(!isScrolling) return;
                 e.preventDefault();
                 const x = e.pageX - gallery.offsetLeft;
-                const walk = (x - startX) * 2;
+                const walk = (x - startX) * 2.5;
                 gallery.scrollLeft = scrollLeft - walk;
             });
 
-            gallery.addEventListener('wheel', () => {
+            let isWheelSrolling = false;
+            let targetScrollLeft = gallery.scrollLeft;
+
+            gallery.addEventListener('wheel', (e) => {
                 e.preventDefault();
-                gallery.scrollLeft += e.deltaY;
+                targetScrollLeft += e.deltaY * 1.5;
+                targetScrollLeft = Math.max(0, Math.min(targetScrollLeft, gallery.scrollWidth - gallery.clientWidth));
+
+                if (!isWheelSrolling) {
+                    isWheelSrolling = true;
+                    smoothScroll();
+                }
             });
+
+            function smoothScroll() {
+                const currentScroll = gallery.scrollLeft;
+                const distance = targetScrollLeft - currentScroll;
+
+                if(Math.abs(distance) < 0.5) {
+                    gallery.scrollLeft = targetScrollLeft;
+                    isWheelSrolling = false;
+                    return;
+                }
+
+                gallery.scrollLeft += distance * 0.15;
+
+                requestAnimationFrame(smoothScroll);
+            }
         });
     </script>
 </body>
