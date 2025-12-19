@@ -672,6 +672,8 @@
         let isScrolling = false;
         let startX;
         let scrollLeft;
+        let velocity = 0;
+        let momentumID;
 
         gallery.querySelectorAll('img').forEach(img => {
             img.addEventListener('dragstart', (e) => e.preventDefault());
@@ -682,6 +684,9 @@
             gallery.style.cursor = 'grabbing';
             startX = e.pageX - gallery.offsetLeft;
             scrollLeft = gallery.scrollLeft;
+
+            cancelAnimationFrame(momentumID);
+            velocity = 0;
         });
 
         gallery.addEventListener('mouseleave', () => {
@@ -692,20 +697,64 @@
         gallery.addEventListener('mouseup', () => {
             isScrolling = false;
             gallery.style.cursor = 'grab';
+
+            beginMomentumTracking();
         });
+
+        let lastX = 0;
+        let lastMoveTime = Date.now();
 
         gallery.addEventListener('mousemove', (e) => {
             if(!isScrolling) return;
             e.preventDefault();
-            const x = e.pageX - gallery.offsetLeft;
-            const walk = (x - startX) * 2;
-            gallery.scrollLeft = scrollLeft - walk;
+            gallery.scrollLeft=scrollLeft-walk;
+            const now = Date.now();
+            const dt = now - lastMoveTime;
+            const dx = x - lastX;
+            velocity = dx / dt;
+            lastX = x;
+            lastMoveTime = now;
         });
 
-        gallery.addEventListener('wheel', (e) => {
-            e.preventDefault();
-            gallery.scrollLeft += e.deltaY;
-        }, { passive: false });
+        function beginMomentumTracking() {
+            cancelAnimationFrame(momentumID);
+            momentumID = requestAnimationFrame(momentumLoop);
+        }
+
+        function momentumLoop() {
+            gallery.scrollLeft -= velocity * 10;
+            velocity *= 0.95;
+
+            if (Math.abs(velocity) > 0.5) {
+                momentumID = requestAnimationFrame(momentumID);
+            }
+        }
+
+        let targetScrollLeft = gallery.scrollLeft;
+        let currentScrollLeft = gallery.scrollLeft;
+
+        function smoothScrollLoop() {
+            const diff = targetScrollLeft - currentScrollLeft;
+            const delta = diff * 0.2;
+
+        if(Math.abs(diff) > 0.5) {
+            currentScrollLeft += delta;
+            gallery.scrollLeft = currentScrollLeft;
+            requestAnimationFrame(smoothScrollLoop);
+        } else {
+            currentScrollLeft = targetScrollLeft;
+            gallery.scrollLeft = currentScrollLeft;
+        }
+    }
+
+    gallery.addEventListener('wheel', (e) => {
+        e.preventDefault();
+
+        targetScrollLeft += e.deltaY;
+        currentScrollLeft = gallery.scrollLeft;
+
+        smoothScrollLoop();
+    }, { passive: false });
 
         //Touch scroll
         let touchStartX = 0;
@@ -714,6 +763,7 @@
         gallery.addEventListener('touchstart', (e) => {
             touchStartX = e.touches[0].pageX;
             touchScrollLeft = gallery.scrollLeft;
+            cancelAnimationFrame(momentumID);
         });
 
         gallery.addEventListener('touchmove', (e) => {
