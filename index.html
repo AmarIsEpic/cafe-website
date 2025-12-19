@@ -674,18 +674,21 @@
         let scrollLeft;
         let velocity = 0;
         let momentumID;
+        let smoothScrollID;
 
         gallery.querySelectorAll('img').forEach(img => {
             img.addEventListener('dragstart', (e) => e.preventDefault());
         })
 
         gallery.addEventListener('mousedown', (e) => {
+            e.preventDefault();
             isScrolling = true;
             gallery.style.cursor = 'grabbing';
             startX = e.pageX - gallery.offsetLeft;
             scrollLeft = gallery.scrollLeft;
 
             cancelAnimationFrame(momentumID);
+            cancelAnimationFrame(smoothScrollID);
             velocity = 0;
         });
 
@@ -697,7 +700,6 @@
         gallery.addEventListener('mouseup', () => {
             isScrolling = false;
             gallery.style.cursor = 'grab';
-
             beginMomentumTracking();
         });
 
@@ -707,7 +709,7 @@
         gallery.addEventListener('mousemove', (e) => {
             if(!isScrolling) return;
             e.preventDefault();
-            gallery.scrollLeft=scrollLeft-walk;
+            gallery.scrollLeft = scrollLeft - walk;
             const now = Date.now();
             const dt = now - lastMoveTime;
             const dx = x - lastX;
@@ -722,11 +724,22 @@
         }
 
         function momentumLoop() {
+            const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+
             gallery.scrollLeft -= velocity * 10;
             velocity *= 0.95;
 
+            if(gallery.scrollLeft < 0) {
+                gallery.scrollLeft = 0;
+                velocity = 0;
+            }
+            if(gallery.scrollLeft > maxScroll) {
+                gallery.scrollLeft = maxScroll;
+                velocity = 0;
+            }
+
             if (Math.abs(velocity) > 0.5) {
-                momentumID = requestAnimationFrame(momentumID);
+                momentumID = requestAnimationFrame(momentumLoop);
             }
         }
 
@@ -734,25 +747,34 @@
         let currentScrollLeft = gallery.scrollLeft;
 
         function smoothScrollLoop() {
+            const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+            
+            targetScrollLeft = Math.max (0, Math.min(targetScrollLeft, maxScroll));
+
             const diff = targetScrollLeft - currentScrollLeft;
             const delta = diff * 0.2;
 
-        if(Math.abs(diff) > 0.5) {
-            currentScrollLeft += delta;
-            gallery.scrollLeft = currentScrollLeft;
-            requestAnimationFrame(smoothScrollLoop);
-        } else {
-            currentScrollLeft = targetScrollLeft;
-            gallery.scrollLeft = currentScrollLeft;
+            if(Math.abs(diff) > 0.5) {
+                currentScrollLeft += delta;
+                gallery.scrollLeft = currentScrollLeft;
+                requestAnimationFrame(smoothScrollLoop);
+            } else {
+                currentScrollLeft = targetScrollLeft;
+                gallery.scrollLeft = currentScrollLeft;
+            }
         }
-    }
 
     gallery.addEventListener('wheel', (e) => {
         e.preventDefault();
 
+        const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+
         targetScrollLeft += e.deltaY;
+        targetScrollLeft = Math.max(0, Math.min(targetScrollLeft, maxScroll));
+
         currentScrollLeft = gallery.scrollLeft;
 
+        cancelAnimationFrame(smoothScrollID);
         smoothScrollLoop();
     }, { passive: false });
 
@@ -764,6 +786,7 @@
             touchStartX = e.touches[0].pageX;
             touchScrollLeft = gallery.scrollLeft;
             cancelAnimationFrame(momentumID);
+            cancelAnimationFrame(smoothScrollID);
         });
 
         gallery.addEventListener('touchmove', (e) => {
