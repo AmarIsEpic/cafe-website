@@ -350,7 +350,7 @@
             <h2 class="section-title">Our Gallery</h2>
             <p class="section-subtitle">Moments from Cafe Square</p>
 
-            <div class="gallery-scroll-container" id="gallery">
+            <div class="gallery-scroll-container" id="gallery-container">
                 <div class="gallery-track" id="galleryTrack">
                     <!--Column 1-->
                     <div class="gallery-column">
@@ -667,46 +667,55 @@
      </script>
     <!--Horizontal gallery-->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const gallery = document.querySelector('.gallery-scroll-container');
+        const gallery = document.getElementById('gallery-container');
 
-                let isScrolling = false;
-                let startX;
-                let scrollLeft;
-            if(!gallery) {
-                console.error('Gallery element not found!');
-                return;
-            }
+        let isScrolling = false;
+        let startX;
+        let scrollLeft;
 
-            gallery.addEventListener('mousedown', (e) => {
-                isScrolling = true;
-                gallery.style.cursor = 'grabbing';
-                startX = e.pageX - gallery.offsetLeft;
-                scrollLeft = gallery.scrollLeft;
-            });
+        gallery.addEventListener('mousedown', (e) => {
+            isScrolling = true;
+            gallery.style.cursor = 'grabbing';
+            startX = e.pageX - gallery.offsetLeft;
+            scrollLeft = gallery.scrollLeft;
+        });
 
-            gallery.addEventListener('mouseleave', () => {
-                isScrolling = false;
-                gallery.style.cursor = 'grab';
-            });
+        gallery.addEventListener('mouseleave', () => {
+            isScrolling = false;
+            gallery.style.cursor = 'grab';
+        });
 
-            gallery.addEventListener('mouseup', () => {
-                isScrolling = false;
-                gallery.style.cursor = 'grab';
-            });
+        gallery.addEventListener('mouseup', () => {
+            isScrolling = false;
+            gallery.style.cursor = 'grab';
+        });
 
-            gallery.addEventListener('mousemove', (e) => {
-                if(!isScrolling) return;
-                e.preventDefault();
-                const x = e.pageX - gallery.offsetLeft;
-                const walk = (x - startX) * 2.5;
-                gallery.scrollLeft = scrollLeft - walk;
-            });
+        gallery.addEventListener('mousemove', (e) => {
+            if(!isScrolling) return;
+            e.preventDefault();
+            const x = e.pageX - gallery.offsetLeft;
+            const walk = (x - startX) * 2;
+            gallery.scrollLeft = scrollLeft - walk;
+        });
 
-            gallery.addEventListener('wheel', (e) => {
-                e.preventDefault();
-                gallery.scrollLeft += e.deltaY * 1.2;
-            }, { passive: false });
+        gallery.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            gallery.scrollLeft += e.deltaY;
+        }, { passive: false });
+
+        //Touch scroll
+        let touchStartX = 0;
+        let touchScrollLeft = 0;
+
+        gallery.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].pageX;
+            touchScrollLeft = gallery.scrollLeft;
+        });
+
+        gallery.addEventListener('touchmove', (e) => {
+            const touchX = e.touches[0].pageX;
+            const walk = (touchStartX - touchX) * 2;
+            gallery.scrollLeft = touchScrollLeft + walk;
         });
     </script>
 </body>

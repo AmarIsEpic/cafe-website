@@ -1089,7 +1089,7 @@ body {
 
 
 .gallery-item:hover {
-    transform: scale(0.97);
+    transform: scale(0.95);
 }
 
 .scroll-hint {
