@@ -777,9 +777,19 @@
         }
 
     gallery.addEventListener('wheel', (e) => {
-        e.preventDefault();
-
         const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+        const atStart = gallery.scrollLeft <= 0;
+        const atEnd = gallery.scrollLeft >= maxScroll;
+
+        if(e.deltaY < 0 && atStart) {
+            return;
+        }
+
+        if(e.deltaY > 0 && atEnd) {
+            return;
+        }
+
+        e.preventDefault();
 
         targetScrollLeft += e.deltaY;
         targetScrollLeft = Math.max(0, Math.min(targetScrollLeft, maxScroll));
