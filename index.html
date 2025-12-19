@@ -675,6 +675,8 @@
         let velocity = 0;
         let momentumID;
         let smoothScrollID;
+        let lastX = 0;
+        let lastMoveTime = Date.now();
 
         gallery.querySelectorAll('img').forEach(img => {
             img.addEventListener('dragstart', (e) => e.preventDefault());
@@ -686,6 +688,8 @@
             gallery.style.cursor = 'grabbing';
             startX = e.pageX - gallery.offsetLeft;
             scrollLeft = gallery.scrollLeft;
+            lastX= e.pageX;
+            lastMoveTime = Date.now();
 
             cancelAnimationFrame(momentumID);
             cancelAnimationFrame(smoothScrollID);
@@ -693,28 +697,36 @@
         });
 
         gallery.addEventListener('mouseleave', () => {
-            isScrolling = false;
-            gallery.style.cursor = 'grab';
-        });
-
-        gallery.addEventListener('mouseup', () => {
+            if(isScrolling){
             isScrolling = false;
             gallery.style.cursor = 'grab';
             beginMomentumTracking();
+            }
         });
 
-        let lastX = 0;
-        let lastMoveTime = Date.now();
+        gallery.addEventListener('mouseup', () => {
+            if(isScrolling) {
+            isScrolling = false;
+            gallery.style.cursor = 'grab';
+            beginMomentumTracking();
+            }
+        });
 
         gallery.addEventListener('mousemove', (e) => {
             if(!isScrolling) return;
             e.preventDefault();
+            const x = e.pageX - gallery.offsetLeft;
+            const walk = (x - startX) * 1.2;
             gallery.scrollLeft = scrollLeft - walk;
+
             const now = Date.now();
             const dt = now - lastMoveTime;
-            const dx = x - lastX;
-            velocity = dx / dt;
-            lastX = x;
+            const dx = e.pageX - lastX;
+
+            if(dt > 0) {
+                velocity = dx / dt;
+            }
+            lastX = e.pageX;
             lastMoveTime = now;
         });
 
