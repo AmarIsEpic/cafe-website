@@ -1111,6 +1111,24 @@ body {
     margin-left: 10px;
 }
 
+@media (max-width: 768px) {
+    .gallery-section .section-title {
+        font-size: 3rem;
+    }
+
+    .gallery-section .section-subtitle {
+        font-size: 1.6rem;
+    }
+
+    .gallery-scroll-container {
+        height: 400px;
+    }
+
+    .gallery-column {
+        width: 200px;
+    }
+}
+
 /* Quiz section */
 .quiz-section {
     background: url(Images/Lines2bg.png) no-repeat center center;
