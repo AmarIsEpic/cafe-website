@@ -1793,13 +1793,43 @@ body {
     font-size: 2.2rem;
     color: #d7ccc8;
     margin-bottom: 60px;
-    font-family: 'Dacncing Script', cursive;
+    font-family: 'Dancing Script', cursive;
     font-weight: 700;
 }
 
 .contact-content {
-    display: flex;
-    justify-content: flex-end;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: flex-start;
+    width: 100%;
+    column-gap: 80px;
+    margin-top: -40px;
+}
+
+.contact-left {
+    padding-top: 40px;
+}
+
+.contact-left .section-title,
+.contact-left .section-subtitle {
+    text-align: left;
+}
+
+.content-image {
+    height: 100vh;
+    width: 25vw;
+    background: url("Images/ContactBg.png") center center;
+    border-radius: 20px;
+    opacity: 0.9;
+}
+
+.contact-image {
+    filter: brightness(0.85) contrast(1.05);
+}
+
+.contact-content::before {
+    content: "";
+    display: block;
 }
 
 .contact-block {
@@ -1808,13 +1838,15 @@ body {
 
 .contact-card {
     background: rgba(255,255,255,0.05);
-    padding: 50px 36px;
+    padding: 60px 40px;
     border-radius: 18px;
     border: 1px solid rgba(255,255,255,0.1);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
-    min-height: 620px;
+    min-height: 780px;
+    margin-top: 40px;
     margin-right: 60px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
 }
 
 .contact-card:hover {
@@ -1828,7 +1860,7 @@ body {
     font-weight: 600;
     font-size: 1.8rem;
     color: white;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
@@ -1846,6 +1878,7 @@ body {
     height: 1px;
     background: rgba(255,255,255,0.15);
     margin: 24px 0 20px;
+    opacity: 0.6;
 }
 
 .contact-info-item svg {
