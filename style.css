@@ -1803,7 +1803,7 @@ body {
     align-items: flex-start;
     width: 100%;
     column-gap: 80px;
-    margin-top: -40px;
+    margin-top: 200px;
 }
 
 .contact-left {
@@ -1815,16 +1815,20 @@ body {
     text-align: left;
 }
 
-.content-image {
+.contact-image {
     height: 100vh;
     width: 25vw;
-    background: url("Images/ContactBg.png") center center;
+    background: url("Images/ContactBg.png") center center / cover no-repeat;
     border-radius: 20px;
     opacity: 0.9;
+    filter: brightness(0.85) contrast(1.05);
 }
 
-.contact-image {
-    filter: brightness(0.85) contrast(1.05);
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 25vw auto;
+    align-items: start;
+    column-gap: 100px;
 }
 
 .contact-content::before {
