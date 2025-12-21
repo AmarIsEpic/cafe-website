@@ -1794,10 +1794,12 @@ body {
 .contact-main {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
     width: 100%;
     text-align: left;
+    max-width: 500px;
     margin: 0 auto;
+    margin-top: 40px;
 }
 
 .main-title {
@@ -1813,7 +1815,8 @@ body {
 }
 
 .contact-header {
-    margin-bottom: 50px;
+    margin-top: 60px;
+    margin-bottom: 100px;
     text-align: center;
     width: 100%;
 }
@@ -1836,9 +1839,9 @@ body {
     text-align: center;
 }
 
-.contact-text-left h2
+.contact-text-left h2,
 .main-title {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     color: white;
     margin-bottom: 15px;
     font-family: 'Poppins', sans-serif;
@@ -1847,15 +1850,17 @@ body {
 }
 
 .contact-text-left .subtitle {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: #b8906a;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     font-family: 'Poppins', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
 }
 
-.contact-text-left p {
-    font-size: 1.1em;
+
+.contact-text-left,
+.main-text {
+    font-size: 1.15em;
     color: rgba(255,255,255,0.8);
     line-height: 1.8;
     font-family: 'Poppins',sans-serif;
@@ -1971,11 +1976,11 @@ body {
 }
 
 .map-container {
-    margin-top: 30px;
+    margin-top: 70px;
     border-radius: 12px;
     overflow: hidden;
     border: 2px solid rgba(255,255,255,0.1);
-    filter: grayscale(85%);
+    filter: grayscale(60%);
     height: 300px;
 }
 
