@@ -1915,6 +1915,9 @@ body {
     display: flex;
     flex-direction: column;
     gap: 22px;
+    max-width: 100%;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .contact-info-card {
@@ -1961,12 +1964,13 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 4px;
+    
 }
 
 .info-value {
     font-size: 1.05rem;
     color: white;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .info-value a {
@@ -1986,6 +1990,8 @@ body {
     border: 2px solid rgba(255,255,255,0.1);
     filter: grayscale(60%);
     height: 300px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .map-container iframe {
