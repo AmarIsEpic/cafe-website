@@ -1815,14 +1815,15 @@ body {
 }
 
 .contact-header {
-    margin-top: 60px;
+    margin-top: 80px;
     margin-bottom: 100px;
     text-align: center;
     width: 100%;
 }
 
+
 .contact-title {
-    font-size: 4.5rem;
+    font-size: 5rem;
     color: white;
     margin-bottom: 15px;
     font-family: 'Poppins', sans-serif;
@@ -1832,7 +1833,7 @@ body {
 }
 
 .contact-subtitle{
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     color: #b8906a;
     font-family: 'Dancing Script', cursive;
     font-weight: 700;
@@ -1841,20 +1842,22 @@ body {
 
 .contact-text-left h2,
 .main-title {
-    font-size: 4.5rem;
+    font-size: 4.3rem;
     color: white;
     margin-bottom: 15px;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     line-height: 1.2;
+    text-align: center;
 }
 
 .contact-text-left .subtitle {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #b8906a;
     margin-bottom: 20px;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
+    text-align: center;
 }
 
 
@@ -1865,6 +1868,7 @@ body {
     line-height: 1.8;
     font-family: 'Poppins',sans-serif;
     font-weight: 300;
+    text-align:justify;
 }
 
 .contact-image-center {
@@ -1910,7 +1914,7 @@ body {
 .contact-info-grid {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 22px;
 }
 
 .contact-info-card {
@@ -1976,7 +1980,7 @@ body {
 }
 
 .map-container {
-    margin-top: 70px;
+    margin-top: 80px;
     border-radius: 12px;
     overflow: hidden;
     border: 2px solid rgba(255,255,255,0.1);
