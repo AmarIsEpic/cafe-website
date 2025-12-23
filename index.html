@@ -936,5 +936,95 @@
             gallery.scrollLeft = touchScrollLeft + walk;
         });
     </script>
+    <!--Leaderboard Data-->
+    <script>
+        const leaderboardData = {
+            
+    "seasonal": [
+        {"rank": 1, "team": "Bolje ispasti glup nego iz aviona", "score": 188},
+        {"rank": 2, "team": "USA", "score": 162},
+        {"rank": 3, "team": "Opasni iz prekida", "score": 152},
+        {"rank": 4, "team": "Tri promila", "score": 135},
+        {"rank": 5, "team": "Cupota team", "score": 125},
+        {"rank": 6, "team": "Balans duda", "score": 120},
+        {"rank": 7, "team": "Outsider", "score": 103},
+        {"rank": 8, "team": "Didovi momci", "score": 77},
+        {"rank": 9, "team": "Mulez", "score": 64},
+        {"rank": 10, "team": "4x4", "score": 60},
+        {"rank": 11, "team": "Kenguri", "score": 56},
+        {"rank": 12, "team": "Mrmoti", "score": 53},
+        {"rank": 13, "team": "Posetino", "score": 44},
+        {"rank": 14, "team": "Pab fiksn", "score": 41},
+        {"rank": 15, "team": "Najlosiji", "score": 28},
+        {"rank": 16, "team": "Jazavci", "score": 18}
+    ],
+    "lastround": [
+        {"rank": 1, "team": "Opasni iz prekida", "score": 432},
+        {"rank": 2, "team": "Bolje ispasti glup nego iz aviona", "score": 386},
+        {"rank": 3, "team": "USA", "score": 371},
+        {"rank": 4, "team": "Čupota team", "score": 361},
+        {"rank": 5, "team": "Balans duda", "score": 311},
+        {"rank": 6, "team": "Outsider", "score": 297},
+        {"rank": 7, "team": "Tri promila", "score": 293},
+        {"rank": 8, "team": "Mulez", "score": 284},
+        {"rank": 9, "team": "Kenguri", "score": 269},
+        {"rank": 10, "team": "Didovi momci", "score": 266},
+        {"rank": 11, "team": "Pab fiksn", "score": 258},
+        {"rank": 12, "team": "Posetino", "score": 228},
+        {"rank": 13, "team": "Najlosiji", "score": 188},
+        {"rank": 14, "team": "Mozgovi", "score": 188},
+        {"rank": 15, "team": "Mrmoti", "score": 188}
+        ]
+    }
+
+            function renderLeaderboard(type) {
+                const content = document.getElementById('leaderboard-content');
+                const data = leaderboardData[type];
+
+                let html = `
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Team</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>`;
+            
+            data.forEach(item => {
+                const isPodium = item.rank <= 3;
+                const rowClass = isPodium ? 'podium-row' : '';
+
+
+                html += `
+                <tr class="${rowClass}">
+                    <td class="rank-cell">${item.rank}</td>
+                    <td class="team-cell">${item.team}</td>
+                    <td class="score-cell">${item.score}</td>
+                </tr>`;
+            });
+
+            html += `
+            </tbody>
+            </table>
+            `;
+
+            content.innerHTML = html;
+        }
+
+        document.querySelectorAll('.leaderboard-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.leaderboard-btn').forEach(b => b.classList.remove('active'));
+
+                btn.classList.add('active');
+
+                const type = btn.getAttribute('data-type');
+                renderLeaderboard(type);
+            });
+        });
+
+        renderLeaderboard('seasonal');
+    </script>
 </body>
 </html>
