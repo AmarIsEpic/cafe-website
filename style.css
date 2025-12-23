@@ -1795,49 +1795,105 @@ body {
 }
 
 .rank-cell {
-    font-weight: bold;
+    font-weight: 700;
     text-align: center;
+    font-size: 1.3rem;
+    color: #6d4c41;
+    width: 100px;
 }
 
 .team-cell {
     font-weight: 500;
+    color: gray;
+    padding-left: 25px;
 }
 
 .score-cell {
-    font-weight: bold;
+    font-weight: 700;
     text-align: right;
     color: #8d6e63;
+    font-size: 1.2rem;
+    padding-right: 30px;
 }
 
 /*Podium styles*/
 .podium-row {
-    background: linear-gradient(135deg, #fff9c4, #fffde7) !important;
-    border: 2px solid #ffd700;
+    background: linear-gradient(135deg, #fff9c4 0%, #fffde7 100%) !important;
+    border-left: 5px solid #ffd700 !important;
+    position: relative;
+}
+
+.podium-row::before {
+    content: "🏆";
+    position: absolute;
+    left: 10px;
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% { 
+        transfrom: translateY(-5px);
+    }
 }
 
 .podium-row .rank-cell {
     color: #d4af37;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.podium-row .store-cell {
+    color: #d4af37;
     font-size: 1.3rem;
+}
+
+.podium-row:nth-child(1) {
+    border-left-color: #ffd700 !important;
+    border-left-width: 5px !important;
+}
+
+.podium-row:nth-child(2) {
+    border-left-color: #c0c0c0 !important;
+    border-left-width: 5px !important;
+}
+
+.podium-row:nth-child(3) {
+    border-left-color: #cd7f32 !important;
+    border-left-width: 5px !important;
 }
 
 .loading{
     text-align: center;
-    padding: 60px;
+    padding: 80px;
     font-size: 1.3rem;
     color: #8d6e63;
     font-family: 'Poppins', sans-serif;
 }
 
 .leaderboard-info {
-    margin-top: 30px;
+    margin-top: 40px;
     text-align: center;
-    color: white;
-    font-size: 1.1rem;
+    color: rgba(255,255,255,0.9);
+    font-size: 1.05rem;
     font-family: 'Poppins', sans-serif;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    background: rgba(255,255,255,0.1);
+    padding: 20px 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
 }
+
+.leaderboard-ifo strong {
+    color: #ffd89b;
+}
+
 
 /* Contact section */
 .contact-section {
