@@ -1767,7 +1767,7 @@ body {
 
 .leaderboard-table th:first-child{
     text-align: center;
-    width: 100px;
+    width: 80px;
 }
 
 .leaderboard-table th:last-child{
@@ -1797,15 +1797,16 @@ body {
 .rank-cell {
     font-weight: 700;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #6d4c41;
-    width: 100px;
+    width: 80px;
+    position: relative;
 }
 
 .team-cell {
     font-weight: 500;
     color: gray;
-    padding-left: 25px;
+    padding-left: 15px;
 }
 
 .score-cell {
@@ -1818,16 +1819,22 @@ body {
 
 /*Podium styles*/
 .podium-row {
-    background: linear-gradient(135deg, #fff9c4 0%, #fffde7 100%) !important;
+    background: white !important;
     border-left: 5px solid #ffd700 !important;
     position: relative;
 }
 
-.podium-row::before {
+.podium-row:hover {
+    background: #f9f5f0;
+}
+
+.podium-row .rank-cell::after {
     content: "🏆";
     position: absolute;
-    left: 10px;
-    font-size: 1.5rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.3rem;
     animation: bounce 2s infinite;
 }
 
@@ -1841,29 +1848,30 @@ body {
 }
 
 .podium-row .rank-cell {
-    color: #d4af37;
-    font-size: 1.5rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    color: #6d4c41;
+    font-size: 1.1rem;
+    font-weight: 700;
 }
 
+.podium-row .team-cell {
+    font-weight: 600;
+    color: #6d4c41;
+}
 .podium-row .store-cell {
-    color: #d4af37;
-    font-size: 1.3rem;
+    font-weight: 600;
+    color: #6d4c41;
 }
 
 .podium-row:nth-child(1) {
-    border-left-color: #ffd700 !important;
-    border-left-width: 5px !important;
+    border-left: 5px solid #ffd700 !important;
 }
 
 .podium-row:nth-child(2) {
-    border-left-color: #c0c0c0 !important;
-    border-left-width: 5px !important;
+    border-left: 5px solid #c0c0c0 !important;
 }
 
 .podium-row:nth-child(3) {
-    border-left-color: #cd7f32 !important;
-    border-left-width: 5px !important;
+   border-left: 5px solid #cd7f32 !important;
 }
 
 .loading{
@@ -1875,16 +1883,16 @@ body {
 }
 
 .leaderboard-info {
-    margin-top: 40px;
+    margin-top: 30px;
     text-align: center;
     color: rgba(255,255,255,0.9);
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     font-family: 'Poppins', sans-serif;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     background: rgba(255,255,255,0.1);
-    padding: 20px 30px;
+    padding: 15px 25px;
     border-radius: 15px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255,0.2);
