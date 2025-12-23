@@ -1633,8 +1633,54 @@ body {
 /* Leaderboard Section */
 .leaderboard-section {
     padding: 80px 20px;
-    background-color: #533830;
+    background: #5d4037;
     min-height: 100vh;
+    position: relative;
+}
+
+.leaderboard-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.08) 0px,
+            rgba(0, 0, 0, 0.08) 80px,
+            transparent 80px,
+            transparent 160px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.08) 0px,
+            rgba(0, 0, 0, 0.08) 80px,
+            transparent 80px,
+            transparent 160px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.04) 0px,
+            rgba(255, 255, 255, 0.04) 160px,
+            transparent 160px,
+            transparent 320px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.04) 0px,
+            rgba(255, 255, 255, 0.04) 160px,
+            transparent 160px,
+            transparent 320px
+        );
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.leaderboard-section .container {
+    position: relative;
+    z-index: 1;
 }
 
 .leaderboard-btn {
