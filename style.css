@@ -907,54 +907,240 @@ body {
 
 
 @media(max-width: 1200px){
+    .about-featured {
+        padding: 60px 20px 80px;
+        min-height: auto;
+    }
+
+    .about-featured .featured-title {
+        font-size: 3.5rem;
+    }
+
+    .about-featured .featured-subtitle {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
 
     .about-text-columns {
         grid-template-columns: 1fr;
         gap: 20px;
         text-align: center;
+        max-width: 800px;
+        margin: 0 auto 40px;
     }
 
-    .featured-boxes{
+    .text-column p {
+        font-size: 1.1rem;
+    }
+
+    .featured-boxes {
         grid-template-columns: repeat(2, 1fr);
         max-width: 700px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .about-featured {
+        padding: 50px 20px 70px;
+        min-height: auto;
     }
 
-    .about-featured {
-        padding: 40px 20px 50px;
+    .about-featured::before {
+        bottom: -25%;
+        height: 70vw;
     }
 
     .about-featured .featured-title {
-        font-size: 3rem;
+        font-size: 2.8rem;
+    }
+
+    .about-featured .featured-subtitle {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+
+    .about-text-columns {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 10px;
+        margin-bottom: 35px;
+    }
+
+    .text-column p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
+
+    .featured-boxes {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 500px;
+        gap: 15px;
+    }
+
+    .box-image {
+        height: 150px;
     }
     
-    .about-featured .featured-subtitle{
-        font-size: 1.6rem;
-        margin-bottom: 25px;
+    .box-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .box-content p {
+        font-size: 0.9rem;
     }
 }
 
 @media(max-width: 768px){
-    .featured-boxes{
-        grid-template-columns: 1fr;
-        max-width: 400px;
+    .about-featured {
+        padding: 40px 15px 80px;
+        min-height: auto;
     }
 
-    .about-featured {
-        padding: 40px 20px 70px;
+    .about-featured::before{
+        bottom: -15%;
+        height: 50vw;
+    }
+
+    .about-featured .container {
+        padding: 0 15px;
     }
 
     .about-featured .featured-title {
-        font-size: 1.5rem;
+        font-size: 2.2rem;
+        margin-bottom: 10px;
     }
-    
-    .about-featured .featured-subtitle{
+
+    .about-featured .featured-subtitle {
         font-size: 1.4rem;
         margin-bottom: 20px;
     }
 
-    .about-featured .about-text p{
-        font-size: 1.1rem;
+    .about-text-columns {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .text-column p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .featured-boxes {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+        margin: 20px auto 0;
+        gap: 15px;
+    }
+
+    .featured-box {
+        width: 100%;
+    }
+
+    .box-image {
+        height: 160px;
+    }
+
+    .box-content {
+        padding: 14px 12px;
+    }
+
+    .box-content h3 {
+        font-size: 1.15rem;
+        margin-bottom: 5px;
+    }
+
+    .box-content p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+
+    .featured-box:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-featured {
+        padding: 35px 12px 70px;
+    }
+
+    .about-featured::before {
+        bottom: -10%;
+        height: 45vw;
+    }
+
+    .about-featured .featured-title {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+    }
+
+    .about-featured .featured-subtitle{
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .about-text-columns {
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+
+    .text-column p {
+        font-size: 0.9rem;
         line-height: 1.5;
+    }
+
+    .featured-boxes {
+        max-width: 260px;
+        gap: 12px;
+    }
+
+    .box-image {
+        height: 140px;
+    }
+
+    .box-content {
+        padding: 12px 10px;
+    }
+
+    .box-content h3 {
+        font-size: 1.05rem;
+    }
+
+    .box-content p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .about-featured .featured-title {
+        font-size: 1.6rem;
+    }
+
+    .about-featured .featured-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .text-column p {
+        font-size: 0.85rem;
+    }
+
+    .featured-boxes {
+        max-width: 240px;
+    }
+
+    .box-image {
+        height: 120px;
+    }
+
+    .box-content h3 {
+        font-size: 1rem;
+    }
+
+    .box-content p {
+        font-size: 0.75rem;
     }
 }
 
