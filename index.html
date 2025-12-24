@@ -1098,18 +1098,32 @@
                     setTimeout(() => {
                         pointsInfoBox.classList.add('active');
                         leaderboardTable.style.display = 'none';
-                        leaderboardTable.classList.remve('hiding');
+                        leaderboardTable.classList.remove('hiding');
                     }, 400);
                 } else {
-                    pointsInfoBox.classList.remove('active');
+                    if(pointsInfoBox.classList.contains('active')) {
+                        pointsInfoBox.classList.remove('active');
+
                     setTimeout(() => {
                         leaderboardTable.style.display = 'flex';
-                    setTimeout(() => {
-                        leaderboardTable.style.opacity = '1';
-                        leaderboardTable.style.transform = 'translateY(0)';
-                    }, 50);
-                    renderLeaderboard(type);
+                        leaderboardTable.style.opacity = '0';
+                        leaderboardTable.style.transform = 'translateY(20px)';
+
+                        renderLeaderboard(type);
+
+                        setTimeout(() => {
+                            leaderboardTable.style.opacity = '1';
+                            leaderboardTable.style.transform = 'translateY(0)';
+                        }, 50);
                     }, 400);
+                    } else {
+                        leaderboardTable.classList.add('hiding');
+
+                        setTimeout(() => {
+                            renderLeaderboard(type);
+                            leaderboardTable.classList.remove('hiding');
+                        }, 400);
+                    }
                 }
             });
         });
