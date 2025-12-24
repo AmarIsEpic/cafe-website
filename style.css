@@ -1946,7 +1946,7 @@ body {
 .points-info-box {
     background: white;
     border-radius: 16px;
-    padding: 30px 40px;
+    padding: 40px 50px;
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
     max-width: 1200px;
     width: 100%;
@@ -1954,7 +1954,7 @@ body {
     font-family: 'Poppins', sans-serif;
     display: none;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
     flex: 1;
     opacity: 0;
     transform: translateY(10px);
@@ -1979,17 +1979,19 @@ body {
 
 .points-info-box h3 {
     color: #5d4037;
-    font-size: 2rem;
-    font-weight: 600;
-    margin: 0 0 15px 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
     text-align: center;
+    letter-spacing: 1px;
 }
 
-.points-info-box p {
+.points-info-box > p {
     color: #6d4c41;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     line-height: 1.8;
-    margin: 0;
+    margin: 0 0 20px 0;
+    text-align: center;
 }
 
 .points-info-box strong {
@@ -2000,60 +2002,81 @@ body {
 .points-content-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin: 20px 0;
+    gap: 35px;
+    margin: 10px 0;
 }
 
 .points-explanation {
     background: #f9f5f0;
-    padding: 25px;
-    border-radius: 12px;
+    padding: 30px;
+    border-radius: 16px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0  0.06);
+}
+
+.points-explanation p {
+    color: #6d4c41;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 0;
 }
 
 .points-distribution {
     background: #f9f5f0;
-    padding: 25px;
-    border-radius: 12px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .points-distribution h4 {
     color: #5d4037;
-    margin: 0 0 20px 0;
-    font-size: 1.4rem;
+    margin: 0 0 25px 0;
+    font-size: 1.6rem;
     text-align: center;
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .points-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 14px;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.point-item {
-    padding: 12px;
+.points-item {
+    padding: 16px 12px;
     background: white;
-    border-radius: 8px;
+    border-radius: 10px;
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 6px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
-.point-item strong {
-    font-size: 1.5rem;
+.points-item:hover {
+    transition: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: #e0d4cc;
+}
+
+
+.points-item strong {
+    font-size: 1.6rem;
     color: #6d4c41;
     display: block;
+    font-weight: 700;
 }
 
-.point-item span {
-    font-size: 1.2rem;
+.point-items span {
+    font-size: 1.1rem;
     color: #8d6e63;
     font-weight: 600;
 }
@@ -2063,9 +2086,19 @@ body {
     color: #ffd700;
 }
 
+.points-item.gold:hover {
+    background: linear-gradient(135deg, #fffbee 0%, #fff9e0 100%);
+    border-color: #ffd700;
+}
+
 .point-item.silver strong {
     font-size: 1.8rem;
     color: #c0c0c0;
+}
+
+.points-item.silver:hover {
+    background: linear-gradient(135deg, #fafafa 0%, #f7f7f7 100%);
+    border-color: #c0c0c0;
 }
 
 .point-item.bronze strong {
@@ -2073,25 +2106,37 @@ body {
     color: #cd7f32;
 }
 
+.points-item.bronze:hover {
+    background: linear-gradient(135deg, #fff9f0 0%, #fff3e6 100%);
+    border-color: #cd7f32;
+}
+
 .info-pagaraph {
     margin-top: 20px;
 }
 
 .pro-tip {
-    margin-top: 20px;
-    padding: 15px;
-    background: rgba(141, 110, 99, 0.1);
-    border-left: 4px solid #8d6e63;
-    border-radius: 8px;
+    margin-top: 5px;
+    padding: 20px;
+    background: rgba(141, 110, 99, 0.15);
+    border-left: 5px solid #8d6e63;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
+
+.pro-tip strong {
+    color: #5d4037;
+}
+
+
 
 @media (max-width: 768px) {
     .points-info-box {
-        padding: 20px 25px;
+        padding: 25px 20px;
     }
 
     .points-info-box h3 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
 
     .points-info-box p {
@@ -2100,6 +2145,7 @@ body {
 
     .points-content-grid {
         grid-template-columns: 1fr;
+        gap: 25px;
     }
 
     .points-grid {
