@@ -2000,6 +2000,75 @@ body {
     background: linear-gradient(180deg, #6d4c41 0%, #5d4037 100%);
 }
 
+.points-distribution {
+    background: #f9f5f0;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.points-distribution h4 {
+    color: #5d4037;
+    margin: 0 0 15px 0;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.points-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minnax(200px, 1fr));
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.point-item {
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.point-item strong {
+    font-size: 1.5rem;
+    color: #6d4c41;
+    display: block;
+}
+
+.point-item span {
+    font-size: 1.2rem;
+    color: #8d6e63;
+    font-weight: 600;
+}
+
+.point-item.gold strong {
+    font-size: 1.8rem;
+    color: #ffd700;
+}
+
+.point-item.silver strong {
+    font-size: 1.8rem;
+    color: #c0c0c0;
+}
+
+.point-item.bronze strong {
+    font-size: 1.8rem;
+    color: #cd7f32;
+}
+
+.info-pagaraph {
+    margin-top: 20px;
+}
+
+.pro-tip {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(141, 110, 99, 0.1);
+    border-left: 4px solid #8d6e63;
+    border-radius: 8px;
+}
+
 /* Contact section */
 .contact-section {
     min-height: 100vh;
