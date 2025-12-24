@@ -572,6 +572,7 @@
             <div class="leaderboard-controls">
                 <button class="leaderboard-btn active" data-type="seasonal">Seasonal Standings</button>
                 <button class="leaderboard-btn" data-type="lastround">Last Round's Results</button>
+                <button class="leaderboard-btn" data-type="pointsinfo">Points Info</button>
             </div>
 
             <div class="leaderboard-container">
@@ -1012,10 +1013,18 @@
                 btn.classList.add('active');
 
                 const type = btn.getAttribute('data-type');
-                renderLeaderboard(type);
+                const pointsInfoBox = document.getElementById('points-info-box');
+                const leaderboardTable = document.getElementById('leaderboard-table-container');
+                if (type === 'pointsinfo') {
+                    pointsInfoBox.classList.add('active');
+                    leaderboardTable.style.display = 'none';
+                } else {
+                    pointsInfoBox.classList.remove('active');
+                    leaderboardTable.style.display = 'flex';
+                    renderLeaderboard(type);
+                }
             });
         });
-
         renderLeaderboard('seasonal');
     </script>
 </body>

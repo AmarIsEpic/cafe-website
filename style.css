@@ -1919,6 +1919,86 @@ body {
     color: #ffd89b;
 }
 
+.points-info-box {
+    background: white;
+    border-radius: 16px;
+    padding: 30px 40px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.points-info-box.active {
+    display: flex;
+}
+
+.points-info-box h3 {
+    color: #5d4037;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+    text-align: center;
+}
+
+.points-info-box p {
+    color: #6d4c41;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.points-info-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.points-info-box li {
+    color: #6d4c41;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    padding: 8px 0;
+    padding-left: 30px;
+    position: relative;
+}
+
+.points-info-box li::before {
+    content: "☕";
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.points-infp-box strong {
+    color: #8d6e63;
+    font-weight: 600;
+}
+
+.points-info-box::-webkit-scrollbar {
+    width: 12px;
+}
+
+.points-info-box::-webkit-scrollbar-track {
+    background: #f9f5f0;
+    border-radius: 0 16px 16px 0;
+}
+
+.points-info-box::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #8d6e63 0%, #6d4c41 100%);
+    border-radius: 6px;
+    border: 2px solid #f9f5f0;
+}
+
+.points-info-box::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #6d4c41 0%, #5d4037 100%);
+}
 
 /* Contact section */
 .contact-section {
