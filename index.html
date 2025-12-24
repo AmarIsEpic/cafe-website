@@ -1093,22 +1093,23 @@
                 const pointsInfoBox = document.getElementById('points-info-box');
                 const leaderboardTable = document.getElementById('leaderboard-table-container');
                 if (type === 'pointsinfo') {
-                    leaderboardTable.style.opacity = '0';
-                    leaderboardTable.style.transform = 'translateY(10px)';
+                    leaderboardTable.classList.add('hiding');
 
                     setTimeout(() => {
                         pointsInfoBox.classList.add('active');
                         leaderboardTable.style.display = 'none';
-                    }, 300);
+                        leaderboardTable.classList.remve('hiding');
+                    }, 400);
                 } else {
                     pointsInfoBox.classList.remove('active');
-
                     setTimeout(() => {
                         leaderboardTable.style.display = 'flex';
+                    setTimeout(() => {
                         leaderboardTable.style.opacity = '1';
                         leaderboardTable.style.transform = 'translateY(0)';
-                        renderLeaderboard(type);
-                    }, 300);
+                    }, 50);
+                    renderLeaderboard(type);
+                    }, 400);
                 }
             });
         });
