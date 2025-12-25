@@ -1087,50 +1087,96 @@
             content.innerHTML = html;
         }
 
-        document.querySelectorAll('.leaderboard-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.leaderboard-btn').forEach(b => b.classList.remove('active'));
+        const pointsInfoBox = document.getElementById('points-info-box');
+        const leaderboardTable = document.getElementById('leaderboard-table-container');
 
-                btn.classList.add('active');
+        function resetStyles() {
+            leaderboardTable.style.opacity = '';
+            leaderboardTable.style.transform = '';
+            leaderboardTable.style.display = '';
+            leaderboardTable.classList.remove('hiding');
 
-                const type = btn.getAttribute('data-type');
-                const pointsInfoBox = document.getElementById('points-info-box');
-                const leaderboardTable = document.getElementById('leaderboard-table-container');
-                if (type === 'pointsinfo') {
-                    leaderboardTable.classList.add('hiding');
+            pointsInfoBox.style.display = 'flex';
+            leaderboardTable.style.opacity = '0';
+            leaderboardTable.style.transform = 'translateY(20px)';
 
-                    setTimeout(() => {
-                        pointsInfoBox.classList.add('active');
-                        leaderboardTable.style.display = 'none';
-                        leaderboardTable.classList.remove('hiding');
-                    }, 400);
-                } else {
-                    if(pointsInfoBox.classList.contains('active')) {
-                        pointsInfoBox.classList.remove('active');
+            renderLeaderboard(type);
 
-                    setTimeout(() => {
-                        leaderboardTable.style.display = 'flex';
-                        leaderboardTable.style.opacity = '0';
-                        leaderboardTable.style.transform = 'translateY(20px)';
-
-                        renderLeaderboard(type);
-
-                        setTimeout(() => {
-                            leaderboardTable.style.opacity = '1';
-                            leaderboardTable.style.transform = 'translateY(0)';
-                        }, 50);
-                    }, 400);
-                    } else {
-                        leaderboardTable.classList.add('hiding');
-
-                        setTimeout(() => {
-                            renderLeaderboard(type);
-                            leaderboardTable.classList.remove('hiding');
-                        }, 400);
-                    }
-                }
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    leaderboardTable.style.opacity = '1';
+                    leaderboardTable.style.transform = 'translateY(0)';
+                });
             });
+        }
+
+        function showPointsInfo() {
+            pointsInfoBox.style.display = 'flex';
+            pointsInfoBox.classList.add('active');
+        }
+
+        function hideTable(callback) {
+            leaderboardTable.style.opacity = '0';
+            leaderboardTable.style.transform = 'translateY(20px)';
+
+            setTimeout(() => {
+                leaderboardTable.style.display = 'none';
+                if(callback) callback();
+            }, 300);
+        }
+
+        function hidePointsInfo(callback) {
+            pointsInfoBox.style.opacity = '0';
+            pointsInfoBox.style.transform = 'translateY(20px)';
+
+            setTimeout(() => {
+            pointsInfoBox.classList.remove('active');
+            pointsInfoBox.style.display = 'none';
+            pointsInfoBox.style.opacity = '';
+            pointsInfoBox.style.transform = '';
+            if (callback) callback();
+        }, 300);
+        }
+
+        document.querySelectorAll('.leaderboard-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Ukloni active sa svih
+            document.querySelectorAll('.leaderboard-btn').forEach(b => b.classList.remove('active'));
+            // Dodaj active na kliknuto
+            btn.classList.add('active');
+
+            const type = btn.getAttribute('data-type');
+            const isPointsInfoVisible = pointsInfoBox.classList.contains('active');
+            const isTableVisible = leaderboardTable.style.display !== 'none';
+
+            if (type === 'pointsinfo') {
+                if (isTableVisible) {
+                    hideTable(() => {
+                        showPointsInfo();
+                    });
+                } else {
+                    showPointsInfo();
+                }
+            } else {
+                if (isPointsInfoVisible) {
+                    hidePointsInfo(() => {
+                        showTable(type);
+                    });
+                } else if (isTableVisible) {
+                    leaderboardTable.style.opacity = '0';
+                    leaderboardTable.style.transform = 'translateY(20px)';
+                    
+                    setTimeout(() => {
+                        renderLeaderboard(type);
+                        leaderboardTable.style.opacity = '1';
+                        leaderboardTable.style.transform = 'translateY(0)';
+                    }, 300);
+                } else {
+                    showTable(type);
+                }
+            }
         });
+    });
         renderLeaderboard('seasonal');
     </script>
 </body>
