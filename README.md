@@ -8,7 +8,7 @@ The website features a responsive layout, modern café-style design, image-based
 
 To run the project locally, simply download or clone the repository and open `index.html` in any modern web browser. No installation, dependencies, or build steps are required.
 
-To deploy the website using GitHub Pages, push the project to a GitHub repository, go to **Settings → Pages**, select the `main` branch with the `/root` folder, and save. The website will then be available at `https://your-username.github.io/repository-name/`.
+To deploy the website using GitHub Pages, push the project to a GitHub repository, go to **Settings → Pages**, select the `main` branch with the `/root` folder, and save. The website will then be available at `https://AmarIsEpic.github.io/cafe-website/`.
 
 All images should be placed inside the `images` folder, and image paths in `index.html` should reference that folder correctly.
 
